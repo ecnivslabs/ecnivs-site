@@ -36,13 +36,13 @@ export const PRODUCTS: Product[] = [
   {
     id: 'crank',
     name: 'Crank',
-    tagline: 'A coding agent that rewrites itself.',
+    tagline: 'One harness that reshapes itself.',
     description:
-      'A plugin-kernel coding agent that authors, typechecks, and hot-mounts its own runtime plugins. It does the same thing for video production, all on the same kernel.',
+      'Crank writes its own tools, rewrites its own interface, and changes how it runs, live, against whatever domain you point it at. Catch it repeating itself and it builds the fix without being asked.',
     features: [
-      'Self-patching runtime, no restart to pick up a change',
+      'Builds tools unprompted when it notices it is repeating itself',
+      'Rewrites its own interface live, no restart',
       'Real LSP diagnostics and typecheck gates',
-      'One kernel: coding tools and a video-production pack',
     ],
     url: 'https://crank.ecnivs.com',
     status: 'waitlist',
