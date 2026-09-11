@@ -1,17 +1,15 @@
 import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion, useScroll, useSpring } from 'motion/react'
 import { List, X } from '@phosphor-icons/react'
-import { SmokyButton } from '@/components/ui/smoky-button'
+import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { Magnetic } from './Magnetic'
 import { Wordmark } from './Wordmark'
 
 const SECTIONS = [
-  { id: 'case-studies', label: 'Case studies' },
-  { id: 'capabilities', label: 'Capabilities' },
-  { id: 'engagement', label: 'How we work' },
-  { id: 'work', label: 'Work' },
-  { id: 'inquiry', label: 'Contact' },
+  { id: 'releases', label: 'Products' },
+  { id: 'about', label: 'Company' },
+  { id: 'contact', label: 'Contact' },
 ]
 
 const FOCUSABLE_SELECTOR =
@@ -117,7 +115,7 @@ export function Nav() {
     <nav
       className={
         scrolled
-          ? 'fixed inset-x-0 top-0 z-40 border-b border-border/60 bg-background/85 shadow-[0_8px_30px_-16px_rgba(0,0,0,0.6)] backdrop-blur-md transition-shadow duration-300'
+          ? 'fixed inset-x-0 top-0 z-40 border-b border-border/60 bg-background/85 shadow-[0_8px_24px_-18px_rgba(30,25,18,0.35)] backdrop-blur-md transition-shadow duration-300'
           : 'fixed inset-x-0 top-0 z-40 border-b border-transparent bg-background/50 backdrop-blur-md transition-shadow duration-300'
       }
     >
@@ -153,9 +151,15 @@ export function Nav() {
 
         <div className="hidden md:block">
           <Magnetic strength={0.25}>
-            <SmokyButton size="sm" asChild>
-              <a href="#inquiry">Start a project</a>
-            </SmokyButton>
+            <Button size="sm" asChild>
+              <a
+                href="https://olive.ecnivs.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Try Olive
+              </a>
+            </Button>
           </Magnetic>
         </div>
 
@@ -199,14 +203,20 @@ export function Nav() {
                   {section.label}
                 </a>
               ))}
-              <SmokyButton
+              <Button
                 size="sm"
                 asChild
                 className="mt-2 w-full"
                 onClick={closeMenu}
               >
-                <a href="#inquiry">Start a project</a>
-              </SmokyButton>
+                <a
+                  href="https://olive.ecnivs.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Try Olive
+                </a>
+              </Button>
             </div>
           </motion.div>
         )}

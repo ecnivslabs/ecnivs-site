@@ -1,20 +1,12 @@
 import { useRef } from 'react'
 import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
 import { ArrowUpRight } from '@phosphor-icons/react'
-import { SmokyButton } from '@/components/ui/smoky-button'
-import { ShaderBackground } from '@/components/ui/shader-background'
+import { Button } from '@/components/ui/button'
 import { Magnetic } from './Magnetic'
 
 const EASE = [0.16, 1, 0.3, 1] as const
 
-const HEADLINE_WORDS = [
-  'Ambitious',
-  'engineering,',
-  'shipped',
-  'end',
-  'to',
-  'end.',
-]
+const HEADLINE_WORDS = ['Independent', 'software,', 'built', 'to', 'last.']
 
 function HeroMark() {
   return (
@@ -37,7 +29,7 @@ function HeroMark() {
           <stop offset="100%" stopColor="hsl(var(--accent-highlight))" />
         </linearGradient>
       </defs>
-      <use href="#hero-arc" stroke="hsl(var(--foreground))" />
+      <use href="#hero-arc" stroke="hsl(var(--foreground) / 0.7)" />
       <use
         href="#hero-arc"
         transform="rotate(180 16 16)"
@@ -55,9 +47,8 @@ export function Hero() {
     target: sectionRef,
     offset: ['start start', 'end start'],
   })
-  const markScale = useTransform(scrollYProgress, [0, 1], [1, 1.12])
-  const markRotate = useTransform(scrollYProgress, [0, 1], [0, 26])
-  const markOpacity = useTransform(scrollYProgress, [0, 1], [1, 0.35])
+  const markScale = useTransform(scrollYProgress, [0, 1], [1, 1.08])
+  const markRotate = useTransform(scrollYProgress, [0, 1], [0, 18])
 
   return (
     <section
@@ -65,28 +56,34 @@ export function Hero() {
       id="top"
       className="relative flex min-h-[100dvh] w-full items-center overflow-hidden pt-24"
     >
-      <div className="absolute inset-0 z-0 bg-background pointer-events-none isolate">
-        <ShaderBackground className="absolute inset-0 opacity-85 pointer-events-auto" />
-        <div aria-hidden="true" className="blueprint-grid hidden sm:block" />
+      <div className="absolute inset-0 z-0 bg-background pointer-events-none">
+        <div
+          aria-hidden="true"
+          className="absolute rounded-full opacity-70"
+          style={{
+            top: 'clamp(-260px, -14vw, -120px)',
+            right: 'clamp(-220px, -8vw, -60px)',
+            height: 'clamp(520px, 40vw, 860px)',
+            width: 'clamp(520px, 40vw, 860px)',
+            background:
+              'radial-gradient(circle, hsl(var(--accent) / 0.16) 0%, hsl(var(--accent) / 0.05) 45%, hsl(var(--accent) / 0) 72%)',
+          }}
+        />
         <motion.div
           aria-hidden="true"
-          className="absolute top-1/2 right-[-14%] hidden h-[560px] w-[560px] -translate-y-1/2 sm:block lg:h-[760px] lg:w-[760px] transform-gpu will-change-transform"
-          style={
-            reduceMotion
-              ? { opacity: 0.9 }
-              : { scale: markScale, rotate: markRotate, opacity: markOpacity }
-          }
+          className="absolute top-1/2 hidden -translate-y-1/2 opacity-55 transform-gpu will-change-transform sm:block"
+          style={{
+            right: 'clamp(-40px, 3vw, 140px)',
+            height: 'clamp(460px, 34vw, 760px)',
+            width: 'clamp(460px, 34vw, 760px)',
+            ...(reduceMotion
+              ? undefined
+              : { scale: markScale, rotate: markRotate }),
+          }}
         >
           <HeroMark />
         </motion.div>
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              'linear-gradient(100deg, hsl(var(--background) / 0.88) 22%, hsl(var(--background) / 0.55) 52%, hsl(var(--background) / 0.15) 100%)',
-          }}
-        />
-        <div className="grain-overlay pointer-events-none" />
+        <div className="grain-overlay" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6">
@@ -97,12 +94,9 @@ export function Hero() {
             transition={{ duration: 0.6, ease: EASE }}
             className="mb-6 flex items-center gap-2.5"
           >
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="absolute inline-flex h-full w-full motion-safe:animate-ping rounded-full bg-accent opacity-75" />
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
-            </span>
+            <span className="h-1.5 w-1.5 rounded-full bg-accent" />
             <span className="font-mono-brand text-xs tracking-wide text-muted-foreground uppercase">
-              Engineering studio, open for projects
+              ecnivs &middot; software company
             </span>
           </motion.div>
 
@@ -121,8 +115,8 @@ export function Hero() {
                     ease: EASE,
                   }}
                   className={
-                    word === 'Ambitious'
-                      ? 'font-accent-serif smoky-text inline-block bg-clip-text font-normal text-transparent'
+                    word === 'Independent'
+                      ? 'font-accent-serif accent-serif-text inline-block font-normal'
                       : 'inline-block'
                   }
                 >
@@ -138,8 +132,8 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.5, ease: EASE }}
             className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg"
           >
-            Software, AI, and systems for teams who need something built, not
-            managed.
+            We build the tools we wish existed, starting with a programming
+            language and a coding agent, and we use them ourselves every day.
           </motion.p>
 
           <motion.div
@@ -149,9 +143,9 @@ export function Hero() {
             className="mt-10 flex flex-wrap items-center gap-6"
           >
             <Magnetic strength={0.3}>
-              <SmokyButton size="lg" asChild>
-                <a href="#inquiry">Start a project</a>
-              </SmokyButton>
+              <Button size="lg" asChild>
+                <a href="#releases">See our releases</a>
+              </Button>
             </Magnetic>
             <a
               href="https://github.com/ecnivslabs"

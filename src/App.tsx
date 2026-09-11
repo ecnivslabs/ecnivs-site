@@ -1,11 +1,8 @@
 import { Nav } from '@/components/site/Nav'
 import { Hero } from '@/components/site/Hero'
-import { Capabilities } from '@/components/site/Capabilities'
-import { CaseStudies } from '@/components/site/CaseStudies'
-import { Engagement } from '@/components/site/Engagement'
-import { Positioning } from '@/components/site/Positioning'
-import { Work } from '@/components/site/Work'
-import { Inquiry } from '@/components/site/Inquiry'
+import { Products } from '@/components/site/Products'
+import { About } from '@/components/site/About'
+import { Contact } from '@/components/site/Contact'
 import { Footer } from '@/components/site/Footer'
 
 function App() {
@@ -19,12 +16,9 @@ function App() {
 
       <main id="main">
         <Hero />
-        <CaseStudies />
-        <Capabilities />
-        <Engagement />
-        <Positioning />
-        <Work />
-        <Inquiry />
+        <Products />
+        <About />
+        <Contact />
       </main>
 
       <Footer />
