@@ -5,8 +5,9 @@ export type Product = {
   name: string
   tagline: string
   description: string
-  features: string[]
   url: string
+  preview: string
+  resources?: { label: string; href: string }[]
   status: ProductStatus
   license?: {
     name: string
@@ -17,15 +18,15 @@ export type Product = {
 export const PRODUCTS: Product[] = [
   {
     id: 'olive',
+    preview: '/products/olive-website.webp',
+    resources: [
+      { label: 'Olive docs', href: 'https://olive.ecnivs.com/docs/' },
+      { label: 'Olive download', href: 'https://olive.ecnivs.com/download/' },
+    ],
     name: 'Olive',
     tagline: 'A systems language you can read.',
     description:
-      'No garbage collector, no braces, and no semicolons. Indentation defines the structure, and the compiler infers ownership for you. When it can’t prove a borrow is safe, it falls back to a runtime check instead of letting memory corrupt silently.',
-    features: [
-      'Compiler-inferred ownership, no lifetime syntax',
-      'Native interop with C, Rust, and Python',
-      'Own package registry and distribution infrastructure',
-    ],
+      'Write systems code without braces, semicolons, or a garbage collector. Olive infers ownership and connects to C, Rust, and Python.',
     url: 'https://olive.ecnivs.com',
     status: 'open-source',
     license: {
@@ -35,21 +36,17 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'pixie',
+    preview: '/products/pixie-website.webp',
     name: 'Pixie',
-    tagline: 'One harness that reshapes itself.',
+    tagline: 'Your terminal. Your kind of agent.',
     description:
-      'Pixie writes its own tools, rewrites its own interface, and changes how it runs, live, against whatever domain you point it at. Catch it repeating itself and it builds the fix without being asked.',
-    features: [
-      'Builds tools unprompted when it notices it is repeating itself',
-      'Rewrites its own interface live, no restart',
-      'Real LSP diagnostics and typecheck gates',
-    ],
+      'Pixie builds its own tools and changes its interface as you work. Make it fit your project, with up to 64% lower token usage through optimizations across the harness.',
     url: 'https://pixie.ecnivs.com',
     status: 'waitlist',
   },
 ]
 
 export const STATUS_LABEL: Record<ProductStatus, string> = {
-  'open-source': 'Live · open source',
-  waitlist: 'In development · waitlist open',
+  'open-source': 'Open source',
+  waitlist: 'Waitlist open',
 }

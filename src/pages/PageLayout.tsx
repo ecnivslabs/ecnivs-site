@@ -4,12 +4,10 @@ import { Wordmark } from '@/components/site/Wordmark'
 import { Footer } from '@/components/site/Footer'
 
 export function PageLayout({
-  eyebrow,
   title,
   subtitle,
   children,
 }: {
-  eyebrow: string
   title: string
   subtitle?: string
   children: ReactNode
@@ -36,9 +34,6 @@ export function PageLayout({
       </header>
 
       <main id="main" className="mx-auto max-w-3xl px-6 py-20">
-        <p className="font-mono-brand text-xs tracking-[0.2em] text-accent uppercase">
-          {eyebrow}
-        </p>
         <h1 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
           {title}
         </h1>

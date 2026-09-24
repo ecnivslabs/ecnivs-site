@@ -1,4 +1,10 @@
-import { ArrowUp, ArrowUpRight, GithubLogo } from '@phosphor-icons/react'
+import {
+  ArrowUp,
+  ArrowUpRight,
+  GithubLogo,
+  WhatsappLogo,
+} from '@phosphor-icons/react'
+import { PRODUCTS } from '@/data/products'
 import { Wordmark } from './Wordmark'
 
 type FooterLink = {
@@ -13,22 +19,19 @@ const COMPANY_LINKS: FooterLink[] = [
   { label: 'Contact', href: '/#contact' },
 ]
 
-const PRODUCT_LINKS: FooterLink[] = [
-  { label: 'Olive', href: 'https://olive.ecnivs.com', external: true },
-  { label: 'Pixie', href: 'https://pixie.ecnivs.com', external: true },
-]
+const PRODUCT_LINKS: FooterLink[] = PRODUCTS.map((product) => ({
+  label: product.name,
+  href: product.url,
+  external: true,
+}))
 
 const RESOURCE_LINKS: FooterLink[] = [
-  {
-    label: 'Olive docs',
-    href: 'https://olive.ecnivs.com/docs/',
-    external: true,
-  },
-  {
-    label: 'Olive download',
-    href: 'https://olive.ecnivs.com/download/',
-    external: true,
-  },
+  ...PRODUCTS.flatMap((product) =>
+    (product.resources ?? []).map((resource) => ({
+      ...resource,
+      external: true,
+    })),
+  ),
   { label: 'GitHub', href: 'https://github.com/ecnivslabs', external: true },
 ]
 
@@ -65,9 +68,7 @@ function FooterColumn({
 }) {
   return (
     <div>
-      <p className="font-mono-brand text-xs tracking-[0.2em] text-subtle-foreground/70 uppercase">
-        {title}
-      </p>
+      <p className="text-sm font-medium text-foreground">{title}</p>
       <div className="mt-5 flex flex-col gap-3">
         {links.map((link) => (
           <FooterLinkItem key={link.label} {...link} />
@@ -83,13 +84,13 @@ export function Footer() {
       <div className="grain-overlay pointer-events-none" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
-        <div className="grid grid-cols-2 gap-x-8 gap-y-12 pb-8 sm:grid-cols-[1.4fr_1fr_1fr_1fr_1fr]">
-          <div className="col-span-2 sm:col-span-1">
+        <div className="grid grid-cols-2 gap-x-8 gap-y-12 pb-8 sm:grid-cols-4 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1fr]">
+          <div className="col-span-2 sm:col-span-4 lg:col-span-1">
             <a href="/" aria-label="ecnivs home">
               <Wordmark />
             </a>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              A software company. We build what we use.
+              Independent software. Made by ecnivs.
             </p>
             <a
               href="mailto:hello@ecnivs.com"
@@ -114,7 +115,7 @@ export function Footer() {
             style={{
               color: 'hsl(var(--surface))',
               textShadow:
-                '0 1.5px 0 rgba(255,255,255,0.7), 0 -1px 1px rgba(30,25,18,0.12)',
+                '0 1.5px 0 rgba(255,255,255,0.7), 0 -1px 1px rgba(24,28,38,0.12)',
             }}
           >
             ecnivs
@@ -126,20 +127,31 @@ export function Footer() {
             <p className="font-mono-brand text-xs text-subtle-foreground">
               &copy; {new Date().getFullYear()} ecnivs.
             </p>
-            <a
-              href="https://github.com/ecnivslabs"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="ecnivs on GitHub"
-              className="text-muted-foreground transition-colors hover:text-foreground"
-            >
-              <GithubLogo size={16} weight="fill" />
-            </a>
+            <div className="flex items-center">
+              <a
+                href="https://github.com/ecnivslabs"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="ecnivs on GitHub"
+                className="inline-flex h-11 w-9 items-center justify-center text-muted-foreground transition-colors hover:text-foreground"
+              >
+                <GithubLogo size={18} weight="fill" aria-hidden="true" />
+              </a>
+              <a
+                href="https://wa.me/919233429872"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Contact ecnivs on WhatsApp"
+                className="inline-flex h-11 w-9 items-center justify-center text-muted-foreground transition-colors hover:text-foreground"
+              >
+                <WhatsappLogo size={18} weight="fill" aria-hidden="true" />
+              </a>
+            </div>
           </div>
           <a
             href="/#top"
             aria-label="Back to top"
-            className="flex h-7 w-7 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors duration-200 hover:border-accent/60 hover:text-accent"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors duration-200 hover:border-accent/60 hover:text-accent"
           >
             <ArrowUp size={14} />
           </a>

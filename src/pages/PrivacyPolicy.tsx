@@ -2,11 +2,7 @@ import { PageLayout, PageList, PageSection } from './PageLayout'
 
 export function PrivacyPolicy() {
   return (
-    <PageLayout
-      eyebrow="Legal"
-      title="Privacy policy"
-      subtitle="Last updated September 2026"
-    >
+    <PageLayout title="Privacy policy" subtitle="Last updated September 2026">
       <PageSection title="Who we are">
         <p>
           ecnivs (&ldquo;we&rdquo;, &ldquo;us&rdquo;) operates ecnivs.com and

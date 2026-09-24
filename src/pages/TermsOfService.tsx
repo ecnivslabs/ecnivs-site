@@ -2,11 +2,7 @@ import { PageLayout, PageSection } from './PageLayout'
 
 export function TermsOfService() {
   return (
-    <PageLayout
-      eyebrow="Legal"
-      title="Terms of service"
-      subtitle="Last updated September 2026"
-    >
+    <PageLayout title="Terms of service" subtitle="Last updated September 2026">
       <PageSection title="Agreement">
         <p>
           These terms cover your use of ecnivs.com and any other site or

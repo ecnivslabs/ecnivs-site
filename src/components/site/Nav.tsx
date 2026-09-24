@@ -1,9 +1,14 @@
 import { useEffect, useRef, useState } from 'react'
-import { AnimatePresence, motion, useScroll, useSpring } from 'motion/react'
+import {
+  AnimatePresence,
+  motion,
+  useScroll,
+  useSpring,
+  useReducedMotion,
+} from 'motion/react'
 import { List, X } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { Magnetic } from './Magnetic'
 import { Wordmark } from './Wordmark'
 
 const SECTIONS = [
@@ -16,6 +21,7 @@ const FOCUSABLE_SELECTOR =
   'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])'
 
 export function Nav() {
+  const reduceMotion = useReducedMotion()
   const [active, setActive] = useState<string>('')
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -36,6 +42,15 @@ export function Nav() {
     handleScroll()
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useEffect(() => {
+    const desktop = window.matchMedia('(min-width: 768px)')
+    const handleChange = () => {
+      if (desktop.matches) setMenuOpen(false)
+    }
+    desktop.addEventListener('change', handleChange)
+    return () => desktop.removeEventListener('change', handleChange)
   }, [])
 
   useEffect(() => {
@@ -115,7 +130,7 @@ export function Nav() {
     <nav
       className={
         scrolled
-          ? 'fixed inset-x-0 top-0 z-40 border-b border-border/60 bg-background/85 shadow-[0_8px_24px_-18px_rgba(30,25,18,0.35)] backdrop-blur-md transition-shadow duration-300'
+          ? 'fixed inset-x-0 top-0 z-40 border-b border-border/60 bg-background/85 shadow-[0_8px_24px_-18px_rgba(24,28,38,0.18)] backdrop-blur-md transition-shadow duration-300'
           : 'fixed inset-x-0 top-0 z-40 border-b border-transparent bg-background/50 backdrop-blur-md transition-shadow duration-300'
       }
     >
@@ -134,7 +149,7 @@ export function Nav() {
               <a
                 href={`#${section.id}`}
                 className={cn(
-                  'font-mono-brand px-4 py-2 text-[11px] tracking-[0.08em] uppercase transition-colors',
+                  'px-4 py-2 text-sm transition-colors',
                   active === section.id
                     ? 'text-foreground'
                     : 'text-muted-foreground hover:text-foreground',
@@ -150,23 +165,17 @@ export function Nav() {
         </div>
 
         <div className="hidden md:block">
-          <Magnetic strength={0.25}>
+          <div className="inline-flex">
             <Button size="sm" asChild>
-              <a
-                href="https://olive.ecnivs.com"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Try Olive
-              </a>
+              <a href="#contact">Get in touch</a>
             </Button>
-          </Magnetic>
+          </div>
         </div>
 
         <button
           ref={menuButtonRef}
           type="button"
-          className="text-foreground md:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center text-foreground md:hidden"
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
@@ -184,16 +193,19 @@ export function Nav() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            transition={{
+              duration: reduceMotion ? 0 : 0.25,
+              ease: [0.16, 1, 0.3, 1],
+            }}
             className="overflow-hidden border-t border-border/60 bg-background md:hidden"
           >
-            <div className="flex flex-col gap-1 px-6 py-4">
+            <div className="flex max-h-[calc(100dvh-76px)] flex-col gap-1 overflow-y-auto px-6 py-4">
               {SECTIONS.map((section) => (
                 <a
                   key={section.id}
                   href={`#${section.id}`}
                   className={cn(
-                    'font-mono-brand py-2 text-xs tracking-[0.08em] uppercase transition-colors',
+                    'flex min-h-11 items-center py-2 text-sm transition-colors',
                     active === section.id
                       ? 'text-foreground'
                       : 'text-muted-foreground hover:text-foreground',
@@ -209,13 +221,7 @@ export function Nav() {
                 className="mt-2 w-full"
                 onClick={closeMenu}
               >
-                <a
-                  href="https://olive.ecnivs.com"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Try Olive
-                </a>
+                <a href="#contact">Get in touch</a>
               </Button>
             </div>
           </motion.div>

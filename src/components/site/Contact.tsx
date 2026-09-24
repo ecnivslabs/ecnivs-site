@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react'
-import { Check } from '@phosphor-icons/react'
+import { Check, Envelope, WhatsappLogo } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { Magnetic } from './Magnetic'
 import { Reveal } from './Reveal'
 
 type FormState = {
@@ -27,7 +26,7 @@ const RESUBMIT_COOLDOWN_MS = 30_000
 const LAST_SUBMIT_KEY = 'ecnivs-contact-last-submit'
 
 const inputClasses =
-  'w-full rounded-xl border border-border bg-surface/60 px-4 py-3.5 text-sm text-foreground placeholder:text-muted-foreground/60 transition-[border-color,box-shadow] duration-200 focus:border-accent/60 focus:outline-none focus:ring-4 focus:ring-accent/10'
+  'w-full rounded-none border border-border bg-surface/60 px-4 py-3.5 text-base text-foreground placeholder:text-muted-foreground/60 transition-[border-color,box-shadow] duration-200 focus:border-accent/60 focus:outline-none focus:ring-4 focus:ring-accent/10'
 
 function Field({
   label,
@@ -152,7 +151,7 @@ export function Contact() {
 
   if (status === 'success') {
     return (
-      <section id="contact" className="border-t border-border/60 py-28">
+      <section id="contact" className="contact-section">
         <div className="mx-auto max-w-2xl px-6 text-center">
           <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-accent/30 bg-background">
             <Check size={20} weight="bold" className="text-accent" />
@@ -175,30 +174,36 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="border-t border-border/60 py-28">
-      <div className="mx-auto max-w-2xl px-6">
+    <section id="contact" className="contact-section">
+      <div className="contact-layout mx-auto max-w-7xl px-6">
         <Reveal>
-          <p className="font-mono-brand text-xs tracking-[0.2em] text-accent uppercase">
-            Get in touch
-          </p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-            Say hello.
+            Let’s talk.
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Questions about what we build, or something else entirely. We read
-            every message ourselves.
+            A question, a bug, or an idea for something we should build. We’d
+            like to hear it.
           </p>
+          <div className="contact-direct">
+            <Button asChild>
+              <a
+                href="https://wa.me/919233429872"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <WhatsappLogo size={20} aria-hidden="true" /> WhatsApp
+              </a>
+            </Button>
+            <Button variant="ghost" asChild>
+              <a href="mailto:hello@ecnivs.com">
+                <Envelope size={20} aria-hidden="true" /> Email
+              </a>
+            </Button>
+          </div>
         </Reveal>
 
-        <Reveal
-          delay={0.08}
-          className="mt-10 rounded-2xl border border-border bg-background"
-        >
-          <form
-            onSubmit={handleSubmit}
-            noValidate
-            className="space-y-6 p-8 sm:p-10"
-          >
+        <Reveal delay={0.08} className="contact-form">
+          <form onSubmit={handleSubmit} noValidate className="space-y-6">
             <div className="sr-only" aria-hidden="true">
               <label htmlFor="company">Company</label>
               <input
@@ -216,6 +221,7 @@ export function Contact() {
               <input
                 ref={nameRef}
                 id="name"
+                autoComplete="name"
                 type="text"
                 value={form.name}
                 onChange={(event) => update('name', event.target.value)}
@@ -230,6 +236,7 @@ export function Contact() {
               <input
                 ref={emailRef}
                 id="email"
+                autoComplete="email"
                 type="email"
                 value={form.email}
                 onChange={(event) => update('email', event.target.value)}
@@ -244,10 +251,10 @@ export function Contact() {
               <textarea
                 ref={messageRef}
                 id="message"
-                rows={5}
+                rows={4}
                 value={form.message}
                 onChange={(event) => update('message', event.target.value)}
-                placeholder="What's on your mind"
+                placeholder="What’s on your mind?"
                 aria-invalid={errors.message ? true : undefined}
                 aria-describedby={errors.message ? 'message-error' : undefined}
                 className={cn(
@@ -288,7 +295,7 @@ export function Contact() {
               </p>
             )}
 
-            <Magnetic strength={0.2}>
+            <div className="inline-flex">
               <Button
                 type="submit"
                 size="lg"
@@ -296,7 +303,7 @@ export function Contact() {
               >
                 {status === 'submitting' ? 'Sending' : 'Send message'}
               </Button>
-            </Magnetic>
+            </div>
           </form>
         </Reveal>
       </div>
