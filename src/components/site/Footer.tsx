@@ -15,7 +15,7 @@ const COMPANY_LINKS: FooterLink[] = [
 
 const PRODUCT_LINKS: FooterLink[] = [
   { label: 'Olive', href: 'https://olive.ecnivs.com', external: true },
-  { label: 'Crank', href: 'https://crank.ecnivs.com', external: true },
+  { label: 'Pixie', href: 'https://pixie.ecnivs.com', external: true },
 ]
 
 const RESOURCE_LINKS: FooterLink[] = [

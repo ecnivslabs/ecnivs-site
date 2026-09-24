@@ -34,17 +34,17 @@ export const PRODUCTS: Product[] = [
     },
   },
   {
-    id: 'crank',
-    name: 'Crank',
+    id: 'pixie',
+    name: 'Pixie',
     tagline: 'One harness that reshapes itself.',
     description:
-      'Crank writes its own tools, rewrites its own interface, and changes how it runs, live, against whatever domain you point it at. Catch it repeating itself and it builds the fix without being asked.',
+      'Pixie writes its own tools, rewrites its own interface, and changes how it runs, live, against whatever domain you point it at. Catch it repeating itself and it builds the fix without being asked.',
     features: [
       'Builds tools unprompted when it notices it is repeating itself',
       'Rewrites its own interface live, no restart',
       'Real LSP diagnostics and typecheck gates',
     ],
-    url: 'https://crank.ecnivs.com',
+    url: 'https://pixie.ecnivs.com',
     status: 'waitlist',
   },
 ]
