@@ -1,0 +1,218 @@
+.videos-section {
+  padding: 64px 0 0;
+}
+.section-description {
+  margin-top: 16px;
+  max-width: 65ch;
+  color: hsl(var(--muted-foreground));
+  font-size: 15px;
+  line-height: 1.75;
+}
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 32px;
+}
+.video-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  transition: color 180ms;
+}
+.video-card-latest {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  border: 2px solid hsl(var(--border));
+  background: hsl(var(--surface));
+  box-shadow: 4px 4px 0 var(--shadow);
+  margin-bottom: 12px;
+  transition: border-color 180ms;
+}
+.video-image {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: hsl(var(--raised));
+  border: 1px solid hsl(var(--border));
+}
+.video-card-latest .video-image {
+  border: 0;
+  border-right: 2px solid hsl(var(--border));
+}
+.video-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.video-image-fallback {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  color: hsl(var(--accent));
+}
+.video-duration {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  padding: 3px 5px;
+  color: hsl(var(--foreground));
+  background: var(--shadow);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.3;
+}
+.video-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0 0;
+}
+.video-details h3 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+  text-wrap: pretty;
+}
+.video-watch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 14px;
+  margin-top: auto;
+  font-size: 12px;
+  color: hsl(var(--muted-foreground));
+  font-weight: 600;
+}
+.video-card-latest .video-details {
+  padding: clamp(24px, 3vw, 44px);
+  justify-content: center;
+}
+.video-card-latest h3 {
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  font-weight: 850;
+  letter-spacing: -0.04em;
+  line-height: 1.12;
+}
+.video-kicker {
+  color: hsl(var(--accent));
+  font-family: var(--font-label);
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.video-card-latest .video-watch {
+  color: hsl(var(--accent));
+  margin-top: 24px;
+  padding-top: 0;
+  justify-content: start;
+  font-size: 14px;
+}
+.video-empty {
+  padding: 32px;
+  margin-top: 32px;
+  border: 2px solid hsl(var(--border));
+  background: hsl(var(--surface));
+  line-height: 1.8;
+}
+.video-freshness {
+  margin-top: 24px;
+  color: hsl(var(--muted-foreground));
+  font-size: 13px;
+}
+.social-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  border-block: 1px solid hsl(var(--border) / 0.6);
+  padding-block: 24px;
+  margin-top: 40px;
+}
+.social-strip p {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.social-strip > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+.social-strip a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  font-family: var(--font-label);
+  font-size: 14px;
+  transition: color 180ms;
+}
+@media (hover: hover) and (pointer: fine) {
+  .video-card:hover {
+    color: hsl(var(--accent));
+  }
+  .video-card-latest:hover {
+    border-color: hsl(var(--accent));
+  }
+  .social-strip a:hover {
+    color: hsl(var(--accent));
+  }
+}
+@media (max-width: 1023px) {
+  .video-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+  }
+}
+@media (max-width: 767px) {
+  .videos-section {
+    padding: 48px 0 0;
+  }
+  .video-grid {
+    gap: 24px;
+  }
+  .video-details {
+    padding: 14px 0 0;
+  }
+  .video-details h3 {
+    font-size: 17px;
+  }
+  .video-card-latest {
+    grid-template-columns: 1fr;
+    margin-bottom: 0;
+  }
+  .video-card-latest .video-image {
+    border-right: 0;
+    border-bottom: 2px solid hsl(var(--border));
+  }
+  .video-card-latest h3 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+  .video-kicker {
+    margin-bottom: 12px;
+  }
+  .social-strip {
+    margin-top: 36px;
+    gap: 16px;
+  }
+  .social-strip > div {
+    gap: 24px;
+  }
+}
+@media (max-width: 539px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .video-card,
+  .social-strip a {
+    transition: none;
+  }
+}

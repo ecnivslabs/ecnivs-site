@@ -1,54 +1,117 @@
+import {
+  ArrowDown,
+  ArrowUpRight,
+  GithubLogo,
+  InstagramLogo,
+  YoutubeLogo,
+} from '@phosphor-icons/react'
+import { Button } from '@/components/ui/button'
 import { PageLayout, PageSection } from './PageLayout'
+import { SOCIAL } from '@/data/social'
 
 export function CompanyPage() {
   return (
     <PageLayout
       title="About ecnivs"
-      subtitle="An independent software company."
+      subtitle="For the terminally curious"
+      variant="about"
+      intro={
+        <>
+          <p>
+            One person, a lot of questions, and a corner of the internet to
+            explore them.
+          </p>
+          <p>
+            I’m the person behind ecnivs. I make videos about code, computers,
+            and the ideas that make me want to dig deeper. Sometimes that
+            curiosity turns into something you can use.
+          </p>
+          <div className="about-actions">
+            <Button size="lg" asChild>
+              <a href="/#videos">
+                Watch the videos <ArrowUpRight size={18} aria-hidden="true" />
+              </a>
+            </Button>
+            <a href="#the-lab" className="editorial-link">
+              Explore the lab <ArrowDown size={18} aria-hidden="true" />
+            </a>
+          </div>
+        </>
+      }
+      media={
+        <figure className="about-portrait">
+          <img
+            src="/about/portrait.webp"
+            width="1254"
+            height="1254"
+            alt="The person behind ecnivs"
+            fetchPriority="high"
+            decoding="async"
+          />
+          <figcaption>Just me, behind the brand</figcaption>
+        </figure>
+      }
     >
-      <PageSection title="What we do">
+      <PageSection title="The videos">
         <p>
-          We’re an independent software company. Our products start with
-          problems we run into ourselves and ideas we want to see through. We
-          design, build, and maintain them as a small team.
+          A new programming language. A system that works differently. A piece
+          of tech that deserves a closer look. That’s where a video starts.
         </p>
         <p>
-          Take a look at our{' '}
-          <a href="/#releases" className="text-accent hover:underline">
-            products
-          </a>
-          .
+          I want you to leave with a clearer picture of how it works, and a
+          reason to stay curious about what comes next.
         </p>
+        <a
+          href={SOCIAL.videos}
+          target="_blank"
+          rel="noreferrer"
+          className="editorial-link"
+        >
+          Browse the channel <ArrowUpRight size={18} aria-hidden="true" />
+        </a>
       </PageSection>
 
-      <PageSection title="How we work">
+      <PageSection title="The lab">
         <p>
-          We're a small team. We design, build, and use our products ourselves.
-          Using them in real projects helps us decide what to fix and what to
-          build next.
+          Explaining things is one half of ecnivs. Building them is the other.
+          ecnivs labs is where those projects live.
         </p>
+        <p>
+          There’s{' '}
+          <a href="https://olive.ecnivs.com" target="_blank" rel="noreferrer">
+            Olive
+          </a>
+          , a systems programming language, and{' '}
+          <a href="https://pixie.ecnivs.com" target="_blank" rel="noreferrer">
+            Pixie
+          </a>
+          , an AI coding agent for the terminal. Different projects, same
+          curiosity about what software could do differently.
+        </p>
+        <a href="/#releases" className="editorial-link">
+          Explore the projects <ArrowUpRight size={18} aria-hidden="true" />
+        </a>
       </PageSection>
 
-      <PageSection title="Where to find us">
+      <PageSection title="Say hello">
         <p>
-          Code lives on{' '}
-          <a
-            href="https://github.com/ecnivslabs"
-            target="_blank"
-            rel="noreferrer"
-            className="text-accent hover:underline"
-          >
-            GitHub
-          </a>
-          . Everything else goes to{' '}
-          <a
-            href="mailto:hello@ecnivs.com"
-            className="text-accent hover:underline"
-          >
-            hello@ecnivs.com
-          </a>
-          .
+          Got a video idea, a question, or a collaboration in mind? Write to{' '}
+          <a href="mailto:hello@ecnivs.com">hello@ecnivs.com</a>.
         </p>
+        <nav className="about-socials" aria-label="Find ecnivs online">
+          <a href={SOCIAL.youtube} target="_blank" rel="noreferrer">
+            <YoutubeLogo size={20} aria-hidden="true" /> YouTube
+            <ArrowUpRight size={16} aria-hidden="true" />
+          </a>
+          <a href={SOCIAL.instagram} target="_blank" rel="noreferrer">
+            <InstagramLogo size={20} aria-hidden="true" /> Instagram
+            <ArrowUpRight size={16} aria-hidden="true" />
+          </a>
+          <a href={SOCIAL.github} target="_blank" rel="noreferrer">
+            <GithubLogo size={20} aria-hidden="true" /> GitHub
+            <ArrowUpRight size={16} aria-hidden="true" />
+          </a>
+        </nav>
       </PageSection>
     </PageLayout>
   )

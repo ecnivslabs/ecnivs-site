@@ -31,7 +31,7 @@ function ProductCard({ product }: { product: Product }) {
         <p className="product-tagline">{product.tagline}</p>
         <p className="product-description">{product.description}</p>
         <div className="product-card-link">
-          <span>Visit {product.name}</span>
+          <span>Explore {product.name}</span>
           <ArrowUpRight size={20} aria-hidden="true" />
         </div>
       </div>
@@ -44,8 +44,14 @@ export function Products() {
     <section id="releases" className="products-section">
       <div className="mx-auto max-w-7xl px-6">
         <div className="section-intro">
-          <h2>Our products.</h2>
+          <div>
+            <p className="section-label">ecnivs labs</p>
+            <h2>We make things, too</h2>
+          </div>
         </div>
+        <p className="section-description">
+          Curiosity doesn’t stop at the video. Meet the projects we’re building.
+        </p>
         <div className="product-grid">
           {PRODUCTS.map((product) => (
             <div key={product.id}>

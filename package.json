@@ -8,12 +8,14 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "fmt": "prettier --write .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "refresh:videos": "python3 scripts/refresh_youtube.py",
+    "test:videos": "python3 -m unittest discover -s scripts -p \"test_*.py\" && node tests/videos.test.ts"
   },
   "dependencies": {
-    "@fontsource-variable/geist": "^5.3.0",
     "@fontsource-variable/geist-mono": "^5.3.0",
-    "@fontsource/instrument-serif": "^5.3.0",
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/space-grotesk": "^5.3.0",
     "@phosphor-icons/react": "^2.1.10",
     "@radix-ui/react-slot": "^1.3.3",
     "class-variance-authority": "^0.7.1",

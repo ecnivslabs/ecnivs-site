@@ -6,23 +6,25 @@ export function About() {
     <section id="about" className="about-section">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 md:grid-cols-2 md:gap-20">
         <Reveal>
+          <p className="section-label">This is ecnivs</p>
           <h2>
-            Small team.
+            One brand
             <br />
-            <span className="font-accent-serif">Close to the work.</span>
+            Many rabbit holes
           </h2>
         </Reveal>
         <Reveal delay={0.1} className="space-y-6">
           <p>
-            The people who design our products also write the code, use it, and
-            fix what breaks. There’s no handoff between the idea and the work.
+            ecnivs is our corner of the internet for understanding tech and
+            making things with it. Programming languages, systems, experiments:
+            if it gets us curious, it belongs here.
           </p>
           <p>
-            We keep the team small and the feedback close. If something gets in
-            your way, we want to know about it.
+            Watch a breakdown. Try a project. Ask a better question. There’s
+            always another rabbit hole.
           </p>
           <a href="/company/" className="editorial-link">
-            More about ecnivs <ArrowUpRight size={18} aria-hidden="true" />
+            Meet ecnivs <ArrowUpRight size={18} aria-hidden="true" />
           </a>
         </Reveal>
       </div>

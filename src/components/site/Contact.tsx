@@ -162,11 +162,11 @@ export function Contact() {
             role="status"
             className="mt-6 text-3xl font-semibold tracking-tight text-foreground outline-none"
           >
-            Received.
+            Received
           </h2>
           <p className="mt-4 text-muted-foreground">
-            We read every message ourselves. Expect a reply at the address you
-            gave us.
+            Thanks for reaching out. We’ll reply at the email address you gave
+            us.
           </p>
         </div>
       </section>
@@ -177,12 +177,13 @@ export function Contact() {
     <section id="contact" className="contact-section">
       <div className="contact-layout mx-auto max-w-7xl px-6">
         <Reveal>
+          <p className="section-label">Say hello</p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-            Let’s talk.
+            Got an idea?
           </h2>
           <p className="mt-4 text-muted-foreground">
-            A question, a bug, or an idea for something we should build. We’d
-            like to hear it.
+            A video idea, a collaboration, or something we should look into.
+            Send it our way.
           </p>
           <div className="contact-direct">
             <Button asChild>
@@ -240,7 +241,7 @@ export function Contact() {
                 type="email"
                 value={form.email}
                 onChange={(event) => update('email', event.target.value)}
-                placeholder="you@company.com"
+                placeholder="you@example.com"
                 aria-invalid={errors.email ? true : undefined}
                 aria-describedby={errors.email ? 'email-error' : undefined}
                 className={cn(inputClasses, errors.email && 'border-danger')}

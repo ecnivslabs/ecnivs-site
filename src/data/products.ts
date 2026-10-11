@@ -40,7 +40,7 @@ export const PRODUCTS: Product[] = [
     name: 'Pixie',
     tagline: 'Your terminal. Your kind of agent.',
     description:
-      'Pixie builds its own tools and changes its interface as you work. Make it fit your project, with up to 64% lower token usage through optimizations across the harness.',
+      'An AI coding agent that builds its own tools and adapts its terminal interface as you work. Make it fit your project.',
     url: 'https://pixie.ecnivs.com',
     status: 'waitlist',
   },

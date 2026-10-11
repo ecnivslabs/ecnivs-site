@@ -1,0 +1,37 @@
+{
+  "channelId": "UCrro_lGCbY6UwieTBWorYHg",
+  "channelUrl": "https://www.youtube.com/@ecnivs/videos",
+  "updatedAt": "2026-10-11T15:13:02+00:00",
+  "videos": [
+    {
+      "id": "zJ58QqSqBxI",
+      "title": "PS5 Games Are Running on PC",
+      "duration": 530,
+      "thumbnail": "https://i.ytimg.com/vi/zJ58QqSqBxI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAzq7kKYji7v_2IQLCsPJ_QkrfGXQ"
+    },
+    {
+      "id": "dYaarTAuS6k",
+      "title": "Mojo in 100 Seconds",
+      "duration": 120,
+      "thumbnail": "https://i.ytimg.com/vi/dYaarTAuS6k/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD68Un1eL74baOkbvtgZcRIIOUGBA"
+    },
+    {
+      "id": "t1bUksso3lE",
+      "title": "Rust 100 Seconds",
+      "duration": 95,
+      "thumbnail": "https://i.ytimg.com/vi/t1bUksso3lE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDR7wP8uYt_3UW0kqFccC_eT-B3PA"
+    },
+    {
+      "id": "c0KqQT9QOkw",
+      "title": "Python in 100 Seconds",
+      "duration": 137,
+      "thumbnail": "https://i.ytimg.com/vi/c0KqQT9QOkw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDBkvPxcqV8_CUnhEJAFZas8TGv3w"
+    },
+    {
+      "id": "eCu-Fx37fOs",
+      "title": "Zig in 100 Seconds",
+      "duration": 125,
+      "thumbnail": "https://i.ytimg.com/vi/eCu-Fx37fOs/hq720_custom_2.jpg?sqp=CMjNrtYG-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCHlJ5VMP-xLVPTbs-kIhndFax7vg"
+    }
+  ]
+}

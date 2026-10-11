@@ -4,6 +4,7 @@ import { Products } from '@/components/site/Products'
 import { About } from '@/components/site/About'
 import { Contact } from '@/components/site/Contact'
 import { Footer } from '@/components/site/Footer'
+import { Videos } from '@/components/site/Videos'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
 
       <main id="main">
         <Hero />
+        <Videos />
         <Products />
         <About />
         <Contact />

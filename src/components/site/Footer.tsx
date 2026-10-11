@@ -3,9 +3,12 @@ import {
   ArrowUpRight,
   GithubLogo,
   WhatsappLogo,
+  YoutubeLogo,
+  InstagramLogo,
 } from '@phosphor-icons/react'
 import { PRODUCTS } from '@/data/products'
 import { Wordmark } from './Wordmark'
+import { SOCIAL } from '@/data/social'
 
 type FooterLink = {
   label: string
@@ -13,9 +16,10 @@ type FooterLink = {
   external?: boolean
 }
 
-const COMPANY_LINKS: FooterLink[] = [
-  { label: 'Company', href: '/company/' },
-  { label: 'Products', href: '/#releases' },
+const BRAND_LINKS: FooterLink[] = [
+  { label: 'About ecnivs', href: '/company/' },
+  { label: 'Labs', href: '/#releases' },
+  { label: 'Videos', href: '/#videos' },
   { label: 'Contact', href: '/#contact' },
 ]
 
@@ -32,7 +36,9 @@ const RESOURCE_LINKS: FooterLink[] = [
       external: true,
     })),
   ),
-  { label: 'GitHub', href: 'https://github.com/ecnivslabs', external: true },
+  { label: 'GitHub', href: SOCIAL.github, external: true },
+  { label: 'YouTube', href: SOCIAL.youtube, external: true },
+  { label: 'Instagram', href: SOCIAL.instagram, external: true },
 ]
 
 const LEGAL_LINKS: FooterLink[] = [
@@ -68,7 +74,7 @@ function FooterColumn({
 }) {
   return (
     <div>
-      <p className="text-sm font-medium text-foreground">{title}</p>
+      <h2 className="text-sm font-medium text-foreground">{title}</h2>
       <div className="mt-5 flex flex-col gap-3">
         {links.map((link) => (
           <FooterLinkItem key={link.label} {...link} />
@@ -90,7 +96,7 @@ export function Footer() {
               <Wordmark />
             </a>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              Independent software. Made by ecnivs.
+              For the terminally curious
             </p>
             <a
               href="mailto:hello@ecnivs.com"
@@ -100,8 +106,8 @@ export function Footer() {
             </a>
           </div>
 
-          <FooterColumn title="Company" links={COMPANY_LINKS} />
-          <FooterColumn title="Products" links={PRODUCT_LINKS} />
+          <FooterColumn title="Explore" links={BRAND_LINKS} />
+          <FooterColumn title="Labs" links={PRODUCT_LINKS} />
           <FooterColumn title="Resources" links={RESOURCE_LINKS} />
           <FooterColumn title="Legal" links={LEGAL_LINKS} />
         </div>
@@ -129,20 +135,38 @@ export function Footer() {
             </p>
             <div className="flex items-center">
               <a
-                href="https://github.com/ecnivslabs"
+                href={SOCIAL.github}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="ecnivs on GitHub"
-                className="inline-flex h-11 w-9 items-center justify-center text-muted-foreground transition-colors hover:text-foreground"
+                className="inline-flex h-11 w-11 items-center justify-center text-muted-foreground transition-colors hover:text-foreground"
               >
                 <GithubLogo size={18} weight="fill" aria-hidden="true" />
+              </a>
+              <a
+                href={SOCIAL.youtube}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="ecnivs on YouTube"
+                className="inline-flex h-11 w-11 items-center justify-center text-muted-foreground transition-colors hover:text-foreground"
+              >
+                <YoutubeLogo size={20} aria-hidden="true" />
+              </a>
+              <a
+                href={SOCIAL.instagram}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="ecnivs on Instagram"
+                className="inline-flex h-11 w-11 items-center justify-center text-muted-foreground transition-colors hover:text-foreground"
+              >
+                <InstagramLogo size={20} aria-hidden="true" />
               </a>
               <a
                 href="https://wa.me/919233429872"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Contact ecnivs on WhatsApp"
-                className="inline-flex h-11 w-9 items-center justify-center text-muted-foreground transition-colors hover:text-foreground"
+                className="inline-flex h-11 w-11 items-center justify-center text-muted-foreground transition-colors hover:text-foreground"
               >
                 <WhatsappLogo size={18} weight="fill" aria-hidden="true" />
               </a>
@@ -151,7 +175,7 @@ export function Footer() {
           <a
             href="/#top"
             aria-label="Back to top"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors duration-200 hover:border-accent/60 hover:text-accent"
+            className="flex h-11 w-11 items-center justify-center border-2 border-border text-muted-foreground transition-colors duration-200 hover:border-accent/60 hover:text-accent"
           >
             <ArrowUp size={14} />
           </a>

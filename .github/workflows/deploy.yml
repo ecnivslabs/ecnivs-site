@@ -4,6 +4,8 @@ on:
   push:
     branches: [master]
   workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
 
 permissions:
   contents: read
@@ -32,6 +34,31 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Install YouTube metadata extractor
+        run: python -m pip install -r scripts/requirements.txt
+
+      - name: Restore last verified YouTube releases
+        uses: actions/cache@v4
+        with:
+          path: src/data/youtube.json
+          key: youtube-releases-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: youtube-releases-
+
+      - name: Refresh long-form YouTube releases
+        run: python scripts/refresh_youtube.py
+
+      - name: Check releases and source
+        run: |
+          npm run test:videos
+          npm run lint
 
       - name: Build
         run: npm run build
