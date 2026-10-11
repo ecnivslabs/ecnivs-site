@@ -36,7 +36,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'pixie',
-    preview: '/products/pixie-website.webp',
+    preview: '/products/pixie-frame-preview.webp',
     name: 'Pixie',
     tagline: 'Your terminal. Your kind of agent.',
     description:
