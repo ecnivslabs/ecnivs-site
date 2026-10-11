@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button'
 import { PageLayout, PageSection } from './PageLayout'
 import { SOCIAL } from '@/data/social'
 
-export function CompanyPage() {
+export function AboutPage() {
   return (
     <PageLayout
       title="About ecnivs"
@@ -22,9 +22,9 @@ export function CompanyPage() {
             explore them.
           </p>
           <p>
-            I’m the person behind ecnivs. I make videos about code, computers,
-            and the ideas that make me want to dig deeper. Sometimes that
-            curiosity turns into something you can use.
+            I’m Vince Hika Swu, the person behind ecnivs. I make videos about
+            code, computers, and the ideas that make me want to dig deeper.
+            Sometimes that curiosity turns into something you can use.
           </p>
           <div className="about-actions">
             <Button size="lg" asChild>
@@ -44,11 +44,11 @@ export function CompanyPage() {
             src="/about/portrait.webp"
             width="1254"
             height="1254"
-            alt="The person behind ecnivs"
+            alt="Portrait of Vince Hika Swu"
             fetchPriority="high"
             decoding="async"
           />
-          <figcaption>Just me, behind the brand</figcaption>
+          <figcaption>Vince Hika Swu · Creator of ecnivs</figcaption>
         </figure>
       }
     >

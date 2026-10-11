@@ -23,7 +23,7 @@ export function About() {
             Watch a breakdown. Try a project. Ask a better question. There’s
             always another rabbit hole.
           </p>
-          <a href="/company/" className="editorial-link">
+          <a href="/about/" className="editorial-link">
             Meet ecnivs <ArrowUpRight size={18} aria-hidden="true" />
           </a>
         </Reveal>

@@ -15,7 +15,11 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: path.resolve(import.meta.dirname, 'index.html'),
-        company: path.resolve(import.meta.dirname, 'company/index.html'),
+        about: path.resolve(import.meta.dirname, 'about/index.html'),
+        companyRedirect: path.resolve(
+          import.meta.dirname,
+          'company/index.html',
+        ),
         privacy: path.resolve(import.meta.dirname, 'privacy/index.html'),
         terms: path.resolve(import.meta.dirname, 'terms/index.html'),
       },

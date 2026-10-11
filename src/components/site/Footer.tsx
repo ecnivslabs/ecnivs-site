@@ -17,7 +17,7 @@ type FooterLink = {
 }
 
 const BRAND_LINKS: FooterLink[] = [
-  { label: 'About ecnivs', href: '/company/' },
+  { label: 'About ecnivs', href: '/about/' },
   { label: 'Labs', href: '/#releases' },
   { label: 'Videos', href: '/#videos' },
   { label: 'Contact', href: '/#contact' },
