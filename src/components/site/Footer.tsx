@@ -127,8 +127,10 @@ export function Footer() {
             ecnivs
           </span>
         </div>
+      </div>
 
-        <div className="flex flex-col gap-4 border-t border-border/50 pt-7 pb-10 sm:flex-row sm:items-center sm:justify-between">
+      <div className="relative z-10 border-t border-border/50">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 pt-7 pb-10 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-5">
             <p className="font-mono-brand text-xs text-subtle-foreground">
               &copy; {new Date().getFullYear()} ecnivs.
