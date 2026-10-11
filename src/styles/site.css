@@ -355,12 +355,9 @@
     max-width: 45ch;
   }
   .hero-art {
-    position: absolute;
-    top: 10%;
-    right: -12%;
-    width: min(85vw, 380px);
-    opacity: 0.24;
-    z-index: -1;
+    grid-row: 1;
+    width: clamp(160px, 44vw, 208px);
+    margin-bottom: 28px;
   }
   .section-intro {
     align-items: start;
