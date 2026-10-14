@@ -29,7 +29,7 @@ export const PRODUCTS: Product[] = [
     name: 'Weft',
     tagline: 'Video, written in ASCII.',
     description:
-      'A Rust ASCII video codec with synchronized audio and seekable .sci archives. Prepare once, then play in the browser. Bandwidth efficiency remains a research goal.',
+      'Encode video as colored ASCII symbols, with synchronized sound and seeking in one .sci file. Rust libraries and a browser decoder are included.',
     url: 'https://weft.ecnivs.com',
     status: 'source-available',
     license: {
