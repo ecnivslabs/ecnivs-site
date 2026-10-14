@@ -30,9 +30,6 @@ function ProductCard({ product }: { product: Product }) {
         </div>
         <p className="product-tagline">{product.tagline}</p>
         <p className="product-description">{product.description}</p>
-        {product.previewCredit && (
-          <p className="product-preview-credit">{product.previewCredit}</p>
-        )}
         <div className="product-card-link">
           <span>Explore {product.name}</span>
           <ArrowUpRight size={20} aria-hidden="true" />
@@ -62,6 +59,9 @@ export function Products() {
             </div>
           ))}
         </div>
+        <p className="product-media-credit">
+          <a href="/products/weft-website-LICENSE.txt">Preview media credits</a>
+        </p>
       </div>
     </section>
   )

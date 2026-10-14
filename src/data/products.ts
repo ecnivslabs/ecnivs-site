@@ -7,7 +7,6 @@ export type Product = {
   description: string
   url: string
   preview: string
-  previewCredit?: string
   resources?: { label: string; href: string }[]
   status: ProductStatus
   license?: {
@@ -20,12 +19,10 @@ export const PRODUCTS: Product[] = [
   {
     id: 'weft',
     preview: '/products/weft-website.png',
-    previewCredit:
-      'Sample: UVG-VCM Winter Drive, Ultra Video Group, Tampere University. CC BY-SA 4.0. Preview resized for this page.',
     resources: [
       {
         label: 'Weft documentation',
-        href: 'https://github.com/ecnivslabs/weft/blob/master/docs/index.md',
+        href: 'https://weft.ecnivs.com/docs/',
       },
       { label: 'Weft source', href: 'https://github.com/ecnivslabs/weft' },
     ],

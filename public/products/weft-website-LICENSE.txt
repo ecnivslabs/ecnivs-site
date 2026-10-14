@@ -6,5 +6,5 @@ The source footage is licensed under CC BY 4.0. The sample, reconstructed poster
 https://creativecommons.org/licenses/by-sa/4.0/
 
 The footage was trimmed, resized and encoded as ASCII. This preview captures the resulting website and is displayed at a reduced size. No source author endorses Weft or ecnivs.
-Full credits and preparation details: https://github.com/ecnivslabs/weft/blob/master/website/ASSETS.md
+Full credits and preparation details: https://weft.ecnivs.com/docs/media/
 Media rights remain separate from Weft's noncommercial software license.
