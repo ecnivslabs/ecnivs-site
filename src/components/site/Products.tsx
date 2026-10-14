@@ -1,5 +1,38 @@
+import { useEffect, useRef, useState } from 'react'
 import { ArrowUpRight } from '@phosphor-icons/react'
 import { PRODUCTS, STATUS_LABEL, type Product } from '@/data/products'
+
+function LivePreview({ product }: { product: Product }) {
+  const container = useRef<HTMLDivElement>(null)
+  const [scale, setScale] = useState(0)
+
+  useEffect(() => {
+    const element = container.current
+    if (!element) return
+    const observer = new ResizeObserver(([entry]) => {
+      setScale(entry.contentRect.width / 1280)
+    })
+    observer.observe(element)
+    return () => observer.disconnect()
+  }, [])
+
+  return (
+    <div className="product-live-preview" ref={container}>
+      <iframe
+        src={product.url}
+        title={`${product.name} live homepage`}
+        width="1280"
+        height="800"
+        loading="lazy"
+        sandbox="allow-scripts"
+        referrerPolicy="no-referrer"
+        tabIndex={-1}
+        aria-hidden="true"
+        style={{ transform: `scale(${scale})` }}
+      />
+    </div>
+  )
+}
 
 function ProductCard({ product }: { product: Product }) {
   return (
@@ -14,14 +47,18 @@ function ProductCard({ product }: { product: Product }) {
           <span>{product.url.replace('https://', '')}</span>
           <ArrowUpRight size={15} aria-hidden="true" />
         </div>
-        <img
-          src={product.preview}
-          width="1280"
-          height="880"
-          alt={`${product.name} homepage`}
-          loading="lazy"
-          decoding="async"
-        />
+        {product.livePreview ? (
+          <LivePreview product={product} />
+        ) : (
+          <img
+            src={product.preview}
+            width="1280"
+            height="880"
+            alt={`${product.name} homepage`}
+            loading="lazy"
+            decoding="async"
+          />
+        )}
       </div>
       <div className="product-details">
         <div className="product-name-row">
@@ -45,7 +82,7 @@ export function Products() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="section-intro">
           <div>
-            <p className="section-label">ecnivs labs</p>
+            <p className="section-label">ecnivs</p>
             <h2>We make things, too</h2>
           </div>
         </div>
@@ -59,9 +96,6 @@ export function Products() {
             </div>
           ))}
         </div>
-        <p className="product-media-credit">
-          <a href="/products/weft-website-LICENSE.txt">Preview media credits</a>
-        </p>
       </div>
     </section>
   )

@@ -6,19 +6,21 @@ export type Product = {
   tagline: string
   description: string
   url: string
-  preview: string
   resources?: { label: string; href: string }[]
   status: ProductStatus
   license?: {
     name: string
     covers: string
   }
-}
+} & (
+  | { livePreview: true; preview?: never }
+  | { livePreview?: false; preview: string }
+)
 
 export const PRODUCTS: Product[] = [
   {
     id: 'weft',
-    preview: '/products/weft-website.png',
+    livePreview: true,
     resources: [
       {
         label: 'Weft documentation',
@@ -27,9 +29,9 @@ export const PRODUCTS: Product[] = [
       { label: 'Weft source', href: 'https://github.com/ecnivslabs/weft' },
     ],
     name: 'Weft',
-    tagline: 'Video, written in ASCII.',
+    tagline: 'Video, written in ASCII',
     description:
-      'Encode video as colored ASCII symbols, with synchronized sound and seeking in one .sci file. Rust libraries and a browser decoder are included.',
+      'A video codec built around colored ASCII symbols. Encode a clip as .sci, then bring it to your own player.',
     url: 'https://weft.ecnivs.com',
     status: 'source-available',
     license: {

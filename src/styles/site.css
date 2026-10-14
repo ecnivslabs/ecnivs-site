@@ -188,11 +188,20 @@
   object-fit: cover;
   object-position: top;
 }
-.product-media-credit {
-  margin: 20px 0 0;
-  font-size: 13px;
-  line-height: 1.5;
-  color: hsl(var(--muted-foreground));
+.product-live-preview {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #0f0d0e;
+}
+.product-live-preview iframe {
+  position: absolute;
+  inset: 0;
+  width: 1280px;
+  height: 800px;
+  border: 0;
+  transform-origin: top left;
+  pointer-events: none;
 }
 .product-details {
   padding: 28px;
