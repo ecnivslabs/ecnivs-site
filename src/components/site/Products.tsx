@@ -30,6 +30,9 @@ function ProductCard({ product }: { product: Product }) {
         </div>
         <p className="product-tagline">{product.tagline}</p>
         <p className="product-description">{product.description}</p>
+        {product.previewCredit && (
+          <p className="product-preview-credit">{product.previewCredit}</p>
+        )}
         <div className="product-card-link">
           <span>Explore {product.name}</span>
           <ArrowUpRight size={20} aria-hidden="true" />

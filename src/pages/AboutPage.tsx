@@ -81,12 +81,16 @@ export function AboutPage() {
           <a href="https://olive.ecnivs.com" target="_blank" rel="noreferrer">
             Olive
           </a>
-          , a systems programming language, and{' '}
+          , a systems programming language;{' '}
           <a href="https://pixie.ecnivs.com" target="_blank" rel="noreferrer">
             Pixie
           </a>
-          , an AI coding agent for the terminal. Different projects, same
-          curiosity about what software could do differently.
+          , an AI coding agent for the terminal; and{' '}
+          <a href="https://weft.ecnivs.com" target="_blank" rel="noreferrer">
+            Weft
+          </a>
+          , an ASCII video codec. Different projects, same curiosity about what
+          software could do differently.
         </p>
         <a href="/#releases" className="editorial-link">
           Explore the projects <ArrowUpRight size={18} aria-hidden="true" />

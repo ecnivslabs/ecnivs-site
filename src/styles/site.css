@@ -148,7 +148,7 @@
 }
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
   gap: 32px;
   margin-top: 40px;
 }
@@ -187,6 +187,12 @@
   aspect-ratio: 16 / 10;
   object-fit: cover;
   object-position: top;
+}
+.product-preview-credit {
+  margin: -12px 0 20px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: hsl(var(--muted-foreground));
 }
 .product-details {
   padding: 28px;
