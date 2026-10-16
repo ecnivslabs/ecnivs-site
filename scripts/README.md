@@ -1,6 +1,6 @@
 # YouTube releases
 
-The site shows the latest six public uploads from the ecnivs Videos tab, preserving YouTube's newest-first order. Shorts are excluded by selecting the Videos tab, rather than guessing from duration. A two-minute landscape video is still a regular release.
+The site shows the latest five public uploads from the ecnivs Videos tab, preserving YouTube's newest-first order. The newest upload appears in a larger frame above the other four. Shorts are excluded by selecting the Videos tab, rather than guessing from duration. A two-minute landscape video is still a regular release.
 
 Install the metadata extractor with `python3 -m pip install -r scripts/requirements.txt`, then run `npm run refresh:videos`. This only fetches public metadata. No video downloads, API key, or browser-side proxy are needed. Local development and builds use the saved feed without requiring network access.
 

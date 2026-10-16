@@ -27,7 +27,7 @@ class YouTubeFeedTests(unittest.TestCase):
 
     def test_limits_releases_preserving_channel_order(self):
         feed = build_feed(playlist([video(i) for i in range(12)]))
-        self.assertEqual([item['id'] for item in feed['videos']], [f'video{i:06d}' for i in range(6)])
+        self.assertEqual([item['id'] for item in feed['videos']], [f'video{i:06d}' for i in range(5)])
 
     def test_excludes_live_upcoming_members_and_unavailable(self):
         entries = [None, video(live_status='is_live'), video(1, live_status='is_upcoming'),

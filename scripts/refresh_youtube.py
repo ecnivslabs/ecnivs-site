@@ -9,7 +9,7 @@ from urllib.parse import urlparse
 CHANNEL_ID = "UCrro_lGCbY6UwieTBWorYHg"
 CHANNEL_URL = "https://www.youtube.com/@ecnivs/videos"
 FEED_PATH = Path(__file__).resolve().parents[1] / "src/data/youtube.json"
-VIDEO_LIMIT = 6
+VIDEO_LIMIT = 5
 
 
 def valid_thumbnail(url):
