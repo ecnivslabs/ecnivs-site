@@ -6,13 +6,13 @@ React and Vite serve the ecnivs site and its shared support, privacy and terms p
 
 Install dependencies with `npm ci`. Run `npm run dev` for local development, `npm run lint` for source checks, `npm run test:videos` for the video data tests and `npm run build` for TypeScript checking and the production build.
 
-The build prerenders `/support/`, `/privacy/` and `/terms/` with the existing React server renderer through Vite. Their essential content and native help disclosures work without JavaScript. Client entry points hydrate that markup, or render normally during development. The temporary Vite renderer is closed after the build.
+The build prerenders `/support/`, `/privacy/` and `/terms/` with the existing React server renderer through Vite. Their essential content and contact links work without JavaScript. Client entry points hydrate that markup, or render normally during development. The temporary Vite renderer is closed after the build.
 
 The contact form reports success only after its configured endpoint accepts the request. Honeypot and duplicate-submission checks do not claim delivery. Request failures preserve entered fields; restricted browser storage cannot block delivery or turn an accepted request into a failure. An unconfigured form provides a direct email alternative. The implementation's optional duplicate timestamp is not a server-side abuse-control guarantee.
 
 ## Shared product information
 
-The central privacy policy describes Pixie's actual account, session, transactional email, feedback and retention behavior. Terms distinguish free account access, unavailable downloads and billing, provider costs and accompanying software licenses. Earlier statements that the sites had no account system were obsolete and removed. Pixie's product listing now says Accounts open rather than Waitlist open.
+The central privacy policy describes our actual account, session, transactional email, feedback and retention practices. Terms cover our websites and services, free and paid access, external providers and accompanying software licenses. Product instructions and release status belong to the individual product rather than these shared pages.
 
 Source evidence was inspected in the separate private `pixie-site/server` implementation and tested account flows. No private server source or credentials are copied into this public repository.
 
@@ -24,10 +24,18 @@ Research used for the changes:
 - [W3C form notifications](https://www.w3.org/WAI/tutorials/forms/notifications/): explicit success and failure feedback that remains available to assistive technology.
 - [Resend privacy information](https://resend.com/legal/privacy-policy): the transactional mail provider is identified rather than hidden behind a general third-party statement.
 
-The existing project design takes precedence over generic skill palettes or decorative imagery. Support is a practical contact action followed by six native, initially closed Pixie help disclosures. It introduces no new form service, search service, tracking or promised response-time agreement.
+The existing project design takes precedence over generic skill palettes or decorative imagery. Support is a shared contact action with product-neutral reporting guidance. Product instructions and release status belong in the relevant product’s website or documentation. It introduces no new form service, search service, tracking or promised response-time agreement.
 
 ## Publishing
 
 GitHub Pages deploys `master` using `.github/workflows/deploy.yml`. The existing workflow checks source and video metadata, builds and publishes the static artifact. Publishing changed source through that workflow requires an explicitly authorized commit and push. Do not commit or push automatically.
 
-Pixie support and legal links should switch to these canonical pages only after the matching ecnivs deployment is live. Keep the old Pixie URLs as redirects, including the Pixie sections of the shared policies. This avoids duplicated policies and broken saved links.
+Product websites should link to the canonical shared support and legal pages. Preserve already-published redirects and incoming fragments when reorganizing content. This avoids duplicated policies and broken saved links.
+
+## Shared-page ownership
+
+Support, privacy and terms represent ecnivs across its products and services. They must not duplicate a product catalogue, launch status, account walkthrough or release FAQ. The existing product directory and footer already read from `src/data/products.ts`; adding a product there does not require changing these shared pages. Product-specific instructions belong with that product.
+
+The shared privacy notice retains concrete, inspected data categories, purposes, providers, current hosted-account retention and rights. It applies relevant sections according to the service used. New data practices, processors, retention or contractual conditions still require review before they change. Avoid vague wording merely to eliminate maintenance. Feature-specific disclosures belong at the point of use and supplement the shared notice when needed. This follows the [ICO layered-notice guidance](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/individual-rights/the-right-to-be-informed/what-methods-can-we-use-to-provide-privacy-information/), used as transparency guidance rather than a claim of universal legal compliance.
+
+The three existing product-named fragment IDs are retained only for already-published incoming links. They produce no product-specific heading or content and do not require aliases for new products. Use `/support/`, `/privacy/` and `/terms/` for new shared links.

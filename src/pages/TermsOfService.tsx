@@ -5,19 +5,14 @@ export function TermsOfService() {
     <PageLayout
       title="Terms of service"
       subtitle="Updated 21 October 2026"
-      intro={
-        <p>
-          Terms for ecnivs websites, Pixie accounts and the services we make
-          available.
-        </p>
-      }
+      intro={<p>Terms for ecnivs websites, products and services.</p>}
     >
       <PageSection title="About these terms">
         <p>
           These terms are between you and Vince Hika Swu, an individual
           developer based in India trading as ecnivs. ecnivs is not a registered
-          company. They cover ecnivs.com, the product sites we operate, and the
-          Pixie account and feedback services at pixie.ecnivs.com.
+          company. They cover the websites, products and services we operate,
+          including accounts, support and feedback where offered.
         </p>
         <p>
           Using a website does not give you ownership of its content. Creating
@@ -42,48 +37,55 @@ export function TermsOfService() {
           ]}
         />
       </PageSection>
-      <PageSection title="Pixie accounts and beta access">
+      <PageSection title="Accounts">
         <p>
-          Account registration is open. Verify your email before using your
-          account. Browser sign-in and explicit device approval connect a Pixie
-          terminal; approve only a code displayed on a device you control.
-          Provider credentials remain separate.
+          <span id="pixie-accounts-and-beta-access" aria-hidden="true" />
+          Where a service offers accounts, follow its registration, verification
+          and recovery instructions. Use an email address you control. If a
+          service asks you to approve a device, approve only requests you
+          initiated on a device you control.
         </p>
         <p>
-          Pixie is free for the time being while we improve it with feedback.
-          Public downloads and billing are coming soon. Creating an account is
-          not a purchase, a paid subscription or a promise of software delivery
-          by a particular date. There are no automatic charges or payment card
-          collection on the account site at present.
-        </p>
-        <p>
-          If a paid offer is introduced, its price, billing terms and any
-          cancellation or refund conditions will be presented before you choose
-          to purchase. We will not charge you merely because you created a free
-          account.
-        </p>
-        <p>
-          Model providers and connected services may charge under their own
-          terms. Free Pixie access does not include paid model credits. You are
-          responsible for reviewing the services, models, tools and extensions
-          you choose to connect.
+          Account access and credentials for external services are separate.
+          Review the permissions of the tools, extensions and providers you
+          connect. You remain responsible for activity you authorize through
+          your account.
         </p>
       </PageSection>
-      <PageSection title="Software and generated work">
+      <PageSection title="Free and paid services">
+        <p>
+          Creating a free account does not authorize a charge or start a paid
+          subscription. Where a paid offer is available, its price, billing
+          terms and cancellation or refund conditions are presented before you
+          choose to purchase.
+        </p>
+        <p>
+          Free access, previews and beta features can change or end.
+          Availability and release information belong to the relevant product.
+          Announcing a feature does not promise delivery by a particular date.
+        </p>
+        <p>
+          External providers may charge under their own terms. Free access to an
+          ecnivs service does not include credits or subscriptions from another
+          provider unless the offer explicitly says so.
+        </p>
+      </PageSection>
+      <PageSection title="Software and your work">
         <p>
           Software we release is governed by its accompanying license, including
           any open-source or source-available license. A website account grants
-          no ownership of the ecnivs or Pixie name, logos or artwork.
+          no ownership of ecnivs names, product branding, logos or artwork.
         </p>
         <p>
-          Model output, code and commands can be incorrect. Review proposed
-          changes, permissions and results before relying on them. Run relevant
-          checks and keep appropriate backups for important work. These terms do
-          not promise that every model or extension can complete every task.
+          Review software results, proposed changes and requested permissions
+          before relying on them. Tools that generate content, code or commands
+          can produce incorrect results. Run relevant checks and keep
+          appropriate backups for important work. No tool or extension is
+          promised to complete every task.
         </p>
         <p>
           Your rights in inputs and outputs also depend on the material you use,
-          the applicable software licenses and your model provider’s terms.
+          the applicable software licenses and any connected provider’s terms.
           These website terms do not transfer ownership of your repository or
           other work to ecnivs.
         </p>
@@ -97,10 +99,10 @@ export function TermsOfService() {
           credentials.
         </p>
         <p>
-          <a href="/support/">Support</a> provides contact and recovery
-          guidance. Support availability depends on the nature of the request;
-          no response-time or uninterrupted-service guarantee is offered unless
-          separately agreed.
+          <a href="/support/">Support</a> explains how to contact us and what
+          information to include. Support availability depends on the nature of
+          the request; no response-time or uninterrupted-service guarantee is
+          offered unless separately agreed.
         </p>
       </PageSection>
       <PageSection title="Accounts and service changes">
