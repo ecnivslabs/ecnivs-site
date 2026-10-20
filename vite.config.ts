@@ -20,6 +20,7 @@ export default defineConfig({
           import.meta.dirname,
           'company/index.html',
         ),
+        support: path.resolve(import.meta.dirname, 'support/index.html'),
         privacy: path.resolve(import.meta.dirname, 'privacy/index.html'),
         terms: path.resolve(import.meta.dirname, 'terms/index.html'),
       },

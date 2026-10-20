@@ -15,7 +15,7 @@ export function PageLayout({
   subtitle?: string
   intro?: ReactNode
   media?: ReactNode
-  variant?: 'document' | 'about'
+  variant?: 'document' | 'about' | 'support'
   children: ReactNode
 }) {
   const sections = Children.toArray(children).flatMap((child) =>

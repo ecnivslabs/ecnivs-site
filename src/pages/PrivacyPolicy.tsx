@@ -2,124 +2,223 @@ import { PageLayout, PageList, PageSection } from './PageLayout'
 
 export function PrivacyPolicy() {
   return (
-    <PageLayout title="Privacy policy" subtitle="Last updated September 2026">
-      <PageSection title="Who we are">
+    <PageLayout
+      title="Privacy policy"
+      subtitle="Updated 21 October 2026"
+      intro={
         <p>
-          ecnivs (&ldquo;we&rdquo;, &ldquo;us&rdquo;) operates ecnivs.com and
-          any other site or subdomain we run. ecnivs is currently run by an
-          individual developer based in India and is not yet a registered
-          company. This policy explains what we collect on these sites and what
-          we do with it.
+          How ecnivs handles information across our websites, Pixie accounts and
+          support.
+        </p>
+      }
+    >
+      <PageSection title="Who is responsible">
+        <p>
+          Vince Hika Swu, an individual developer based in India trading as
+          ecnivs, operates ecnivs.com and the ecnivs product sites. ecnivs is
+          not a registered company.
+        </p>
+        <p>
+          This policy covers our websites, contact and support requests, and
+          Pixie’s account and feedback services at pixie.ecnivs.com. A product
+          may provide additional information for a specific feature. Third-party
+          services you choose have their own policies.
+        </p>
+        <p>
+          For privacy questions, email{' '}
+          <a href="mailto:hello@ecnivs.com">hello@ecnivs.com</a>. For account
+          access, correction or deletion, email{' '}
+          <a href="mailto:support@ecnivs.com">support@ecnivs.com</a>.
         </p>
       </PageSection>
-
-      <PageSection title="What we collect">
-        <p>
-          The only personal information we collect directly is what you give us:
-        </p>
+      <PageSection title="Information you provide">
         <PageList
           items={[
-            'Your name, email address, and message, if you use a contact form on one of our sites.',
-            'Your name and email address, if you join a waitlist for one of our unreleased products.',
+            'Contact and support: your name, email address, message and any details you choose to include, so we can answer and resolve your request.',
+            'Product updates or waitlists, where offered: the details requested on the signup form, used for the updates you request. You can ask to stop receiving them.',
+            'Technical requests: hosting and security services process IP addresses, browser information and request metadata to serve pages, diagnose failures and prevent abuse.',
           ]}
         />
         <p>
-          If analytics are enabled on a given page, we may also see aggregate,
-          non-identifying usage data such as page views and referring pages. We
-          use a privacy-respecting analytics tool that does not use cookies and
-          does not track you across sites.
+          Do not send passwords, API keys, private device codes or sensitive
+          repository content in support requests. We may ask for limited
+          information to verify account ownership before disclosing or deleting
+          data.
         </p>
       </PageSection>
-
-      <PageSection title="How we use it">
+      <PageSection title="Pixie accounts">
+        <p>
+          Pixie is a product of ecnivs. Registration collects your name, email
+          address and password. We store a password hash rather than a readable
+          password, along with your verification state, account status and
+          account timestamps. This supports account creation, email
+          verification, sign-in and password recovery.
+        </p>
+        <p>
+          Sessions contain identifiers, expiry times, IP addresses and client
+          information such as browser or app identifiers. A terminal receives an
+          account credential only after browser sign-in and explicit approval of
+          its matching device code. These records and rate limits protect access
+          to the service.
+        </p>
+        <p>
+          Verification and password reset emails use your account email address.
+          Resend processes the recipient, message content and delivery
+          information. We use delivery and failure events to monitor
+          transactional email. Account emails are not advertising.
+        </p>
+        <p>
+          Feedback you send includes its message, category, account identifier,
+          app version, platform and submission time. It does not automatically
+          attach conversations, repository files, provider keys or terminal
+          logs.
+        </p>
+        <p>
+          Your model provider is separate. The account website does not request
+          provider API keys. Data sent from the app to a provider follows that
+          provider’s terms and privacy practices. Installing extensions or
+          connecting external services can introduce additional data flows that
+          you control.
+        </p>
+        <p>
+          Pixie has no checkout, payment card collection or paid subscription on
+          this site at present. Billing and public downloads are coming soon.
+        </p>
+      </PageSection>
+      <PageSection title="Why we use information">
         <PageList
           items={[
-            'To reply to a message you send us.',
-            'To notify you when a product you joined the waitlist for is ready.',
-            'To understand, in aggregate, which pages people visit, so we know what is worth improving.',
+            'To provide the account, recovery, feedback or support service you request.',
+            'To protect accounts and infrastructure, investigate misuse and maintain reliable delivery.',
+            'To understand reports and improve our products using the feedback you choose to send.',
+            'To send optional product updates only where you have requested them.',
           ]}
         />
         <p>
-          We read every message ourselves. We do not use your information for
-          advertising, and we do not build profiles from it.
+          Where data protection law requires a legal basis, we rely on providing
+          the service you request for account and support operations, our
+          legitimate interests in security and improving services for
+          proportionate operational processing, and consent for optional updates
+          or other processing that requires it. You can withdraw consent by
+          contacting us; this does not change processing already carried out
+          lawfully.
+        </p>
+        <p>
+          We do not sell personal information, share it for third-party
+          marketing or use account information for advertising profiles. We do
+          not make automated decisions that produce legal or similarly
+          significant effects about you.
         </p>
       </PageSection>
-
-      <PageSection title="What we don't do">
-        <PageList
-          items={[
-            'We do not sell your information.',
-            'We do not share it with third parties for marketing.',
-            'We do not run ad trackers or cross-site tracking pixels on these sites.',
-          ]}
-        />
-      </PageSection>
-
-      <PageSection title="Third-party services">
+      <PageSection title="Service providers and transfers">
         <p>
-          Our contact forms submit to a third-party form service that delivers
-          messages to our inbox. Where analytics are enabled, we use a
-          self-hosted or privacy-focused analytics provider rather than a tool
-          that tracks individual users across the web. We don't control those
-          services' own policies, but we choose ones that don't sell data or
-          track people across sites.
+          GitHub Pages hosts ecnivs.com. Cloudflare processes traffic for
+          delivery and security. Pixie’s hosting infrastructure stores the
+          account database and backups, and Resend delivers transactional
+          account email. Email providers process messages you send to our
+          inboxes. A contact form, when configured, uses the delivery service
+          identified by that form.
         </p>
-      </PageSection>
-
-      <PageSection title="Cookies">
         <p>
-          These sites don't set tracking or advertising cookies. Any cookies
-          that do appear are functional, such as keeping a form submission from
-          double-sending.
+          These providers may process information in countries outside your own.
+          Applicable transfer arrangements depend on the service and the law
+          that applies to you. Contact us for information about the providers
+          and arrangements relevant to your request. We do not claim that all
+          processing stays in India.
         </p>
-      </PageSection>
-
-      <PageSection title="Data retention">
         <p>
-          We keep messages and waitlist entries for as long as they're useful,
-          generally until we've replied or the related product has shipped. You
-          can ask us to delete your information at any time.
-        </p>
-      </PageSection>
-
-      <PageSection title="Your rights">
-        <p>
-          You can ask us what information we hold about you, ask us to correct
-          it, or ask us to delete it. Email{' '}
-          <a
-            href="mailto:hello@ecnivs.com"
-            className="text-accent hover:underline"
-          >
-            hello@ecnivs.com
-          </a>{' '}
-          and we'll handle it directly.
-        </p>
-      </PageSection>
-
-      <PageSection title="Children">
-        <p>
-          These sites aren't directed at children, and we don't knowingly
-          collect information from anyone under 13.
-        </p>
-      </PageSection>
-
-      <PageSection title="Changes to this policy">
-        <p>
-          If this policy changes in a meaningful way, we'll update the date at
-          the top of this page.
-        </p>
-      </PageSection>
-
-      <PageSection title="Contact">
-        <p>
-          Questions about this policy go to{' '}
-          <a
-            href="mailto:hello@ecnivs.com"
-            className="text-accent hover:underline"
-          >
-            hello@ecnivs.com
+          Provider information:{' '}
+          <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">
+            GitHub privacy
           </a>
-          .
+          ,{' '}
+          <a href="https://www.cloudflare.com/privacypolicy/">
+            Cloudflare privacy
+          </a>{' '}
+          and{' '}
+          <a href="https://resend.com/legal/privacy-policy">Resend privacy</a>.
+          Links to other sites, embedded previews and services you open are
+          subject to their operators’ policies.
+        </p>
+      </PageSection>
+      <PageSection title="Cookies and local storage">
+        <p>
+          Pixie uses necessary sign-in cookies with Secure, HttpOnly and
+          SameSite protections. Website JavaScript cannot read those session
+          cookies. The terminal stores its account credential separately from
+          provider credentials. Signing out ends the selected session; account
+          settings let you revoke other sessions.
+        </p>
+        <p>
+          Cloudflare may set security cookies. The contact form can keep a
+          recent-submission timestamp in browser session storage to reduce
+          duplicate submissions; it does not store your message there. We do not
+          use advertising cookies on these sites.
+        </p>
+        <p>
+          The ecnivs and Pixie account websites do not currently load an
+          analytics or advertising script. If nonessential analytics are
+          introduced, this notice and any legally required choice will be
+          updated before use.
+        </p>
+      </PageSection>
+      <PageSection title="Retention and deletion">
+        <PageList
+          items={[
+            'Pixie account information remains while your account is active, unless you request deletion or retention is required for a specific security or legal purpose.',
+            'Feedback remains while useful for investigating an issue or improving the product, or until you request its removal, subject to necessary security or legal records.',
+            'Sessions expire after up to 30 days without renewal. Verification links last one hour, reset links 30 minutes and device codes ten minutes. Expired authentication records are removed by routine maintenance.',
+            'Queued account email bodies are cleared after acceptance by the mail service. Queue metadata and associated delivery records are removed after 30 days.',
+            'Routine Pixie database backups are retained for 14 days. Deleted records can remain in protected backups until those backups expire.',
+            'Support messages are kept while needed to resolve the request and manage relevant follow-up, security or legal obligations. Optional update or waitlist details are kept while that purpose continues, or until you ask to leave.',
+          ]}
+        />
+        <p>
+          Infrastructure and email providers may retain their own operational
+          records under their policies. We use restricted access and appropriate
+          technical measures to protect retained information; no service can
+          promise absolute security.
+        </p>
+      </PageSection>
+      <PageSection title="Your choices and rights">
+        <p>
+          You can update your Pixie name and password, review sessions and sign
+          out devices in{' '}
+          <a href="https://pixie.ecnivs.com/account/settings">
+            account settings
+          </a>
+          . To request access, a copy, correction or deletion, email{' '}
+          <a href="mailto:support@ecnivs.com?subject=Account%20data%20request">
+            support@ecnivs.com
+          </a>{' '}
+          from your account email. We verify ownership before acting.
+        </p>
+        <p>
+          Depending on applicable law, you may also have rights to portability,
+          restriction, objection and withdrawal of consent, and to complain to
+          the relevant data protection authority. Contact{' '}
+          <a href="mailto:hello@ecnivs.com">hello@ecnivs.com</a> to exercise
+          these rights or raise a privacy concern. We respond within the time
+          limits that apply to the request. Deleting necessary account
+          information can end access to that account.
+        </p>
+        <p>
+          Our services are not designed for children. If you believe a child has
+          provided personal information without any permission required by
+          applicable law, contact us so we can investigate and take appropriate
+          action.
+        </p>
+      </PageSection>
+      <PageSection title="Changes and contact">
+        <p>
+          We update the date when this policy changes. For material changes
+          affecting an existing account, we will provide an appropriate notice
+          through the service or account email where required.
+        </p>
+        <p>
+          Privacy: <a href="mailto:hello@ecnivs.com">hello@ecnivs.com</a>.
+          Product help and account requests:{' '}
+          <a href="/support/">ecnivs support</a>.
         </p>
       </PageSection>
     </PageLayout>

@@ -1,4 +1,5 @@
-export type ProductStatus = 'open-source' | 'source-available' | 'waitlist'
+export type ProductStatus =
+  'open-source' | 'source-available' | 'waitlist' | 'accounts-open'
 
 export type Product = {
   id: string
@@ -66,7 +67,7 @@ export const PRODUCTS: Product[] = [
     description:
       'An AI coding agent that builds its own tools and adapts its terminal interface as you work. Make it fit your project.',
     url: 'https://pixie.ecnivs.com',
-    status: 'waitlist',
+    status: 'accounts-open',
   },
 ]
 
@@ -74,4 +75,5 @@ export const STATUS_LABEL: Record<ProductStatus, string> = {
   'open-source': 'Open source',
   'source-available': 'Source available',
   waitlist: 'Waitlist open',
+  'accounts-open': 'Accounts open',
 }

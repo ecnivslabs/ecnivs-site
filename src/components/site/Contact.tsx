@@ -18,10 +18,16 @@ const INITIAL_STATE: FormState = {
   company: '',
 }
 
-type Status = 'idle' | 'submitting' | 'success' | 'error' | 'unconfigured'
+type Status =
+  | 'idle'
+  | 'submitting'
+  | 'success'
+  | 'error'
+  | 'unconfigured'
+  | 'blocked'
+  | 'cooldown'
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-const MIN_SUBMIT_MS = 2500
 const RESUBMIT_COOLDOWN_MS = 30_000
 const LAST_SUBMIT_KEY = 'ecnivs-contact-last-submit'
 
@@ -67,15 +73,10 @@ export function Contact() {
     Partial<Record<keyof FormState, string>>
   >({})
   const [status, setStatus] = useState<Status>('idle')
-  const mountedAt = useRef(0)
   const nameRef = useRef<HTMLInputElement>(null)
   const emailRef = useRef<HTMLInputElement>(null)
   const messageRef = useRef<HTMLTextAreaElement>(null)
   const successHeadingRef = useRef<HTMLHeadingElement>(null)
-
-  useEffect(() => {
-    mountedAt.current = Date.now()
-  }, [])
 
   useEffect(() => {
     if (status === 'success') successHeadingRef.current?.focus()
@@ -109,20 +110,22 @@ export function Contact() {
     event.preventDefault()
     if (!validate()) return
 
-    const lastSubmit = Number(sessionStorage.getItem(LAST_SUBMIT_KEY) ?? 0)
-    const isBot =
-      form.company.trim().length > 0 ||
-      Date.now() - mountedAt.current < MIN_SUBMIT_MS
+    let lastSubmit = 0
+    try {
+      lastSubmit = Number(sessionStorage.getItem(LAST_SUBMIT_KEY) ?? 0)
+    } catch {
+      // Optional duplicate detection must not block a message when storage is restricted.
+    }
+    const isBot = form.company.trim().length > 0
     const isThrottled = Date.now() - lastSubmit < RESUBMIT_COOLDOWN_MS
 
     if (isBot) {
-      setStatus('success')
-      setForm(INITIAL_STATE)
+      setStatus('blocked')
       return
     }
 
     if (isThrottled) {
-      setStatus('success')
+      setStatus('cooldown')
       return
     }
 
@@ -141,7 +144,11 @@ export function Contact() {
         body: JSON.stringify(payload),
       })
       if (!response.ok) throw new Error('Request failed')
-      sessionStorage.setItem(LAST_SUBMIT_KEY, String(Date.now()))
+      try {
+        sessionStorage.setItem(LAST_SUBMIT_KEY, String(Date.now()))
+      } catch {
+        // Delivery already succeeded; unavailable browser storage must not reverse it.
+      }
       setStatus('success')
       setForm(INITIAL_STATE)
     } catch {
@@ -280,6 +287,17 @@ export function Contact() {
                   hello@ecnivs.com
                 </a>{' '}
                 and we will pick it up from there.
+              </p>
+            )}
+
+            {(status === 'blocked' || status === 'cooldown') && (
+              <p
+                role="alert"
+                className="border border-border bg-surface px-4 py-3 text-sm text-muted-foreground"
+              >
+                {status === 'cooldown'
+                  ? 'Please wait 30 seconds between messages. This message has not been sent.'
+                  : 'This message could not be submitted. Please email hello@ecnivs.com directly.'}
               </p>
             )}
 

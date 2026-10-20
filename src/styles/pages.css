@@ -268,3 +268,103 @@
     transition: none;
   }
 }
+
+.page-support .page-content {
+  padding-top: 40px;
+  max-width: 900px;
+}
+.support-contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 28px;
+  border: 2px solid hsl(var(--border));
+  background: hsl(var(--surface));
+  box-shadow: 4px 4px 0 var(--shadow);
+}
+.support-contact h2 {
+  font-size: 23px;
+  font-weight: 750;
+  letter-spacing: -0.03em;
+}
+.support-contact p {
+  margin-top: 12px;
+  max-width: 46ch;
+  font-size: 15px;
+  line-height: 1.8;
+  color: hsl(var(--muted-foreground));
+}
+.support-contact-action {
+  flex: none;
+}
+.support-contact-action p {
+  font-size: 13px;
+}
+.support-safety {
+  margin: 24px 0 40px;
+  max-width: 70ch;
+  font-size: 14px;
+  line-height: 1.8;
+  color: hsl(var(--muted-foreground));
+}
+.support-shortcuts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+}
+.support-shortcuts a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  font-family: var(--font-label);
+  font-size: 14px;
+}
+.support-answers {
+  border-top: 1px solid hsl(var(--border) / 0.6);
+}
+.support-answers details {
+  padding-block: 10px;
+  border-bottom: 1px solid hsl(var(--border) / 0.6);
+}
+.support-answers summary {
+  cursor: pointer;
+  min-height: 44px;
+  padding-block: 8px;
+  color: hsl(var(--foreground));
+  font-weight: 600;
+  padding-right: 8px;
+}
+.support-answers details p {
+  margin-top: 16px;
+  max-width: 70ch;
+}
+.support-answers code {
+  color: hsl(var(--foreground));
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+.support-general {
+  margin-top: 40px;
+  max-width: 70ch;
+  color: hsl(var(--muted-foreground));
+  font-size: 15px;
+  line-height: 1.8;
+}
+.support-general a {
+  color: hsl(var(--accent));
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+@media (max-width: 600px) {
+  .support-contact {
+    align-items: start;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+  }
+  .page-support .page-content {
+    padding-top: 32px;
+  }
+}

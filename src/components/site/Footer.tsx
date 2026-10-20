@@ -21,6 +21,7 @@ const BRAND_LINKS: FooterLink[] = [
   { label: 'Labs', href: '/#releases' },
   { label: 'Videos', href: '/#videos' },
   { label: 'Contact', href: '/#contact' },
+  { label: 'Support', href: '/support/' },
 ]
 
 const PRODUCT_LINKS: FooterLink[] = PRODUCTS.map((product) => ({
