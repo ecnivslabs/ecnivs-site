@@ -63,6 +63,14 @@ export function PrivacyPolicy() {
           and approval records. These records and rate limits protect access.
         </p>
         <p>
+          Where two-factor authentication is available, we store an encrypted
+          authenticator secret and encrypted recovery codes. Session records
+          include second-factor verification times. These records protect
+          sign-in and privileged access; used recovery codes are removed.
+          Administrative records identify who changed account roles, revoked
+          sessions or reviewed feedback, along with the target, time and reason.
+        </p>
+        <p>
           Transactional email uses your account address for verification,
           recovery and service notifications. Resend processes the recipient,
           message content and delivery information. We use delivery and failure
@@ -168,6 +176,7 @@ export function PrivacyPolicy() {
             'Feedback remains while useful for investigating an issue or improving the product, or until you request its removal, subject to necessary security or legal records.',
             'Our current hosted account service uses sessions lasting up to 30 days without renewal, verification links lasting one hour, reset links lasting 30 minutes and device codes lasting ten minutes. Expired authentication records are removed by routine maintenance.',
             'Queued account email bodies are cleared after acceptance by the mail service. Queue metadata and associated delivery records are removed after 30 days.',
+            'Administrative change history in our current hosted account service is retained for 180 days for access reviews and security investigations. Authentication replay checks expire after two minutes.',
             'Routine backups of our current hosted account database are retained for 14 days. Deleted records can remain in protected backups until those backups expire.',
             'Support messages are kept while needed to resolve the request and manage relevant follow-up, security or legal obligations. Optional update or waitlist details are kept while that purpose continues, or until you ask to leave.',
           ]}
