@@ -62,6 +62,10 @@ export const PRODUCTS: Product[] = [
   {
     id: 'pixie',
     preview: '/products/pixie-frame-preview.webp',
+    resources: [
+      { label: 'Pixie docs', href: 'https://pixie.ecnivs.com/guide' },
+      { label: 'Pixie availability', href: 'https://pixie.ecnivs.com/downloads' },
+    ],
     name: 'Pixie',
     tagline: 'Your terminal. Your kind of agent.',
     description:
