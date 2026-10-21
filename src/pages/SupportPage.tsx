@@ -48,7 +48,7 @@ export function SupportPage() {
         <p>
           If your request concerns an account, email from its associated address
           where possible. We verify ownership before sharing account information
-          or making changes. Never send your password.
+          or making changes.
         </p>
         <p>
           Our <a href="/privacy/">privacy policy</a> explains how to request

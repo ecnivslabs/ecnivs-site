@@ -294,15 +294,14 @@ export function Contact() {
                 role="alert"
                 className="rounded-xl border border-border bg-surface px-4 py-3 text-sm text-muted-foreground"
               >
-                We are not able to take messages through this form right now.
-                Email us directly at{' '}
+                This form is unavailable. Email{' '}
                 <a
                   href="mailto:hello@ecnivs.com"
                   className="text-accent hover:underline"
                 >
                   hello@ecnivs.com
-                </a>{' '}
-                and we will pick it up from there.
+                </a>
+                .
               </p>
             )}
 
