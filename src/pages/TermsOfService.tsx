@@ -10,15 +10,20 @@ export function TermsOfService() {
       <PageSection title="About these terms">
         <p>
           These terms are between you and Vince Hika Swu, an individual
-          developer based in India trading as ecnivs. ecnivs is not a registered
-          company. They cover the websites, products and services we operate,
-          including accounts, support and feedback where offered.
+          developer based in Nagaland, India, operating as ecnivs. They cover
+          the websites, products and services we operate, including accounts,
+          support and feedback where offered.
+        </p>
+        <p>
+          Business contact address: Yehovi Complex, Dimapur 797112, Nagaland,
+          India.
         </p>
         <p>
           Using a website does not give you ownership of its content. Creating
           an account means agreeing to the terms presented with that account.
-          You must be able to enter into this agreement, or have the permission
-          and supervision required by applicable law.
+          You must have the legal capacity to enter into this agreement. If you
+          act for an organisation, you must have authority to bind it. These
+          terms do not create a parental-consent process for children.
         </p>
         <p>
           A product’s accompanying software license governs that software. If
@@ -52,12 +57,39 @@ export function TermsOfService() {
           your account.
         </p>
       </PageSection>
+      <PageSection title="Acceptable use and service limits">
+        <PageList
+          items={[
+            'Use services only with lawful authority over the accounts, systems, data and material involved. Obtain any permission needed before accessing or testing someone else’s systems.',
+            'Do not use our services to steal credentials or data, distribute malicious software, send spam, harass people or infringe privacy or intellectual property rights. Authorised security testing must stay within its agreed scope.',
+            'Do not bypass access controls or service limits, impersonate another person, share accounts to evade restrictions or deliberately disrupt our infrastructure.',
+            'Follow the terms and usage restrictions of any external provider you connect. Access to our service does not grant access to another provider’s paid or restricted resources.',
+          ]}
+        />
+        <p>
+          Hosted services use request-size and rate limits to protect capacity
+          and prevent abuse. An offer is not a promise of unlimited requests,
+          storage or provider credits unless it explicitly says so. Any
+          plan-specific allowance or paid overage must be disclosed before you
+          purchase that plan. These terms do not introduce an undisclosed usage
+          charge.
+        </p>
+        <p>
+          We may proportionately limit access to address abuse, security risks
+          or legal obligations. You can contact{' '}
+          <a href="mailto:support@ecnivs.com">support@ecnivs.com</a> if you
+          believe a restriction is mistaken. These service rules do not remove
+          rights granted by a separate software license or mandatory law.
+        </p>
+      </PageSection>
       <PageSection title="Free and paid services">
         <p>
           Creating a free account does not authorize a charge or start a paid
-          subscription. Where a paid offer is available, its price, billing
-          terms and cancellation or refund conditions are presented before you
-          choose to purchase.
+          subscription. A free preview does not automatically become a paid
+          subscription. Before any purchase, the offer must identify the price,
+          currency, applicable taxes, billing interval, included usage, renewal,
+          cancellation and refund conditions. You must explicitly choose the
+          paid offer before we charge you.
         </p>
         <p>
           Free access, previews and beta features can change or end.
@@ -72,14 +104,27 @@ export function TermsOfService() {
       </PageSection>
       <PageSection title="Software and your work">
         <p>
+          Where we provide an official client application without a separate
+          software license, we grant you a limited, non-exclusive right to
+          install and use that client on devices you own or are authorised to
+          use, for the service’s intended personal or business use. This does
+          not grant a right to redistribute or sell our proprietary client,
+          publish its source code or use our branding as your own. Rights
+          required by law and licenses for third-party components remain
+          unaffected. A separately supplied software license takes precedence
+          for that software.
+        </p>
+        <p>
           Software we release is governed by its accompanying license, including
           any open-source or source-available license. A website account grants
           no ownership of ecnivs names, product branding, logos or artwork.
         </p>
         <p>
           Review software results, proposed changes and requested permissions
-          before relying on them. Tools that generate content, code or commands
-          can produce incorrect results. Run relevant checks and keep
+          before relying on them. Tools may read or change files, run commands
+          or contact external services with the access you grant. Generated
+          content, code and commands can be incorrect, insecure, non-unique or
+          subject to third-party rights. Run relevant checks and keep
           appropriate backups for important work. No tool or extension is
           promised to complete every task.
         </p>
@@ -136,7 +181,8 @@ export function TermsOfService() {
           or consequential losses arising from use of the websites or account
           services. Nothing here excludes liability or limits rights that
           applicable law does not allow us to exclude, including mandatory
-          consumer protections.
+          consumer protections. We do not exclude liability for fraud, wilful
+          misconduct or any other liability that cannot lawfully be excluded.
         </p>
       </PageSection>
       <PageSection title="Third-party services">
@@ -160,7 +206,9 @@ export function TermsOfService() {
           requires you to give up a legal right that cannot be waived.
         </p>
         <p>
-          Terms and general enquiries:{' '}
+          For privacy complaints, see the named contact in our{' '}
+          <a href="/privacy/#privacy-complaints">privacy policy</a>. Terms and
+          general enquiries:{' '}
           <a href="mailto:hello@ecnivs.com">hello@ecnivs.com</a>. Product help:{' '}
           <a href="mailto:support@ecnivs.com">support@ecnivs.com</a>.
         </p>

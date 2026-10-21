@@ -14,9 +14,12 @@ export function PrivacyPolicy() {
     >
       <PageSection title="Who is responsible">
         <p>
-          Vince Hika Swu, an individual developer based in India trading as
-          ecnivs, operates ecnivs.com and the ecnivs product sites. ecnivs is
-          not a registered company.
+          Vince Hika Swu, an individual developer based in Nagaland, India,
+          operating as ecnivs, operates ecnivs.com and the ecnivs product sites.
+        </p>
+        <p>
+          Business contact address: Yehovi Complex, Dimapur 797112, Nagaland,
+          India.
         </p>
         <p>
           This policy covers the websites, products and services we operate,
@@ -91,6 +94,25 @@ export function PrivacyPolicy() {
           API keys.
         </p>
       </PageSection>
+      <PageSection title="Information on your device">
+        <p>
+          Installed applications may keep settings, account credentials, local
+          conversation history, task records, generated files and diagnostic
+          logs on your device, depending on the features you use. Signing out of
+          an account does not by itself erase local work or records. Review an
+          application’s storage and removal instructions before sharing a device
+          or uninstalling it.
+        </p>
+        <p>
+          A tool, provider or extension you authorise may read files, run
+          commands or send material to external services. Check the requested
+          access and the receiving service’s terms and privacy notice. Our
+          current hosted account and feedback services do not automatically
+          receive your conversations, repository files or provider credentials.
+          This does not mean that a connected model provider or tool processes
+          no content.
+        </p>
+      </PageSection>
       <PageSection title="Why we use information">
         <PageList
           items={[
@@ -107,7 +129,9 @@ export function PrivacyPolicy() {
           proportionate operational processing, and consent for optional updates
           or other processing that requires it. You can withdraw consent by
           contacting us; this does not change processing already carried out
-          lawfully.
+          lawfully. Legitimate interests is a basis only where the applicable
+          law recognises it; it does not replace consent where consent is
+          required.
         </p>
         <p>
           We do not sell personal information, share it for third-party
@@ -213,6 +237,24 @@ export function PrivacyPolicy() {
           provided personal information without any permission required by
           applicable law, contact us so we can investigate and take appropriate
           action.
+        </p>
+      </PageSection>
+      <PageSection title="Privacy complaints">
+        <p>
+          Privacy grievance officer: Vince Hika Swu. Email{' '}
+          <a href="mailto:hello@ecnivs.com?subject=Privacy%20complaint">
+            hello@ecnivs.com
+          </a>
+          . Business contact address: Yehovi Complex, Dimapur 797112, Nagaland,
+          India.
+        </p>
+        <p>
+          Identify the service involved, explain your concern and include a way
+          to reply. Do not send passwords, API keys or identity documents with
+          your initial complaint. We address privacy grievances within one month
+          of receipt, or a shorter period where applicable law requires it.
+          Contacting us does not prevent you from using any regulatory or court
+          remedy available under applicable law.
         </p>
       </PageSection>
       <PageSection title="Changes and contact">
