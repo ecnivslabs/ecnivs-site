@@ -94,6 +94,31 @@ export function PrivacyPolicy() {
           API keys.
         </p>
       </PageSection>
+      <PageSection title="Security and operational logs">
+        <p>
+          Where our hosted services keep security and operational logs, these
+          record collection time, service and event category. Depending on the
+          event, metadata may include an IP address, a server-generated request
+          reference, HTTP method, route category, status and duration, or a
+          database error code and database process or session identifiers.
+        </p>
+        <p>
+          These records help detect abuse, diagnose failures, investigate
+          incidents and meet applicable security-record requirements. Necessary
+          security records are separate from optional app diagnostics. Turning
+          off optional diagnostics does not turn off this operational
+          recordkeeping.
+        </p>
+        <p>
+          Our restricted security archive is stored in India. It keeps selected
+          metadata and content-free markers rather than raw log messages. The
+          archive excludes request URLs, headers and bodies, raw database error
+          text, passwords, provider keys, conversations and repository content.
+          Support messages, feedback you submit and records held by our service
+          providers are separate and follow the relevant sections of this
+          policy.
+        </p>
+      </PageSection>
       <PageSection title="Information on your device">
         <p>
           Installed applications may keep settings, account credentials, local
@@ -143,10 +168,12 @@ export function PrivacyPolicy() {
       <PageSection title="Service providers and transfers">
         <p>
           GitHub Pages hosts ecnivs.com. Cloudflare processes traffic for
-          delivery and security. Our hosting infrastructure stores account
-          databases and backups, and Resend delivers transactional email. Email
-          providers process messages you send to our inboxes. A contact form,
-          when configured, uses the delivery service identified by that form.
+          delivery and security. Our current hosted account infrastructure runs
+          on Hostinger in India, including the account database, local backups
+          and restricted security archive. Resend delivers transactional email.
+          Email providers process messages you send to our inboxes. A contact
+          form, when configured, uses the delivery service identified by that
+          form.
         </p>
         <p>
           These providers may process information in countries outside your own.
@@ -163,6 +190,10 @@ export function PrivacyPolicy() {
           ,{' '}
           <a href="https://www.cloudflare.com/privacypolicy/">
             Cloudflare privacy
+          </a>
+          ,{' '}
+          <a href="https://www.hostinger.com/legal/privacy-policy">
+            Hostinger privacy
           </a>{' '}
           and{' '}
           <a href="https://resend.com/legal/privacy-policy">Resend privacy</a>.
@@ -244,6 +275,7 @@ export function PrivacyPolicy() {
             'Our current hosted account service uses sessions lasting up to 30 days without renewal, verification links lasting one hour, reset links lasting 30 minutes and device codes lasting ten minutes. Expired authentication records are removed by routine maintenance.',
             'Queued account email bodies are cleared after acceptance by the mail service. Queue metadata and associated delivery records are removed after 30 days.',
             'Administrative change history in our current hosted account service is retained for 180 days for access reviews and security investigations. Authentication replay checks expire after two minutes.',
+            'Security and operational metadata in our restricted archive is retained for 180 days from collection, then removed by routine maintenance. This archive is separate from optional diagnostics and is not included in routine account-database backups.',
             'Routine backups of our current hosted account database are retained for around two weeks under daily rotation. Deleted records can remain in protected backups until that rotation removes them.',
             'Support messages are kept while needed to resolve the request and manage relevant follow-up, security or legal obligations. Optional update or waitlist details are kept while that purpose continues, or until you ask to leave.',
           ]}
