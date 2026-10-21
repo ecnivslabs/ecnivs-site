@@ -18,7 +18,6 @@ type FooterLink = {
 
 const BRAND_LINKS: FooterLink[] = [
   { label: 'About ecnivs', href: '/about/' },
-  { label: 'Labs', href: '/#releases' },
   { label: 'Videos', href: '/#videos' },
   { label: 'Contact', href: '/#contact' },
   { label: 'Support', href: '/support/' },
@@ -30,17 +29,12 @@ const PRODUCT_LINKS: FooterLink[] = PRODUCTS.map((product) => ({
   external: true,
 }))
 
-const RESOURCE_LINKS: FooterLink[] = [
-  ...PRODUCTS.flatMap((product) =>
-    (product.resources ?? []).map((resource) => ({
-      ...resource,
-      external: true,
-    })),
-  ),
-  { label: 'GitHub', href: SOCIAL.github, external: true },
-  { label: 'YouTube', href: SOCIAL.youtube, external: true },
-  { label: 'Instagram', href: SOCIAL.instagram, external: true },
-]
+const RESOURCE_LINKS: FooterLink[] = PRODUCTS.flatMap((product) =>
+  (product.resources ?? []).map((resource) => ({
+    ...resource,
+    external: true,
+  })),
+)
 
 const LEGAL_LINKS: FooterLink[] = [
   { label: 'Privacy policy', href: '/privacy/' },
@@ -53,7 +47,7 @@ function FooterLinkItem({ label, href, external }: FooterLink) {
       href={href}
       target={external ? '_blank' : undefined}
       rel={external ? 'noreferrer' : undefined}
-      className="group/link inline-flex w-fit items-center gap-1.5 text-sm text-muted-foreground transition-colors duration-200 hover:text-foreground"
+      className="group/link inline-flex w-fit items-center gap-1.5 text-sm text-muted-foreground transition-colors duration-200 select-none hover:text-foreground"
     >
       {label}
       {external && (

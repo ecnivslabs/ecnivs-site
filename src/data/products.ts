@@ -24,10 +24,9 @@ export const PRODUCTS: Product[] = [
     livePreview: true,
     resources: [
       {
-        label: 'Weft documentation',
+        label: 'Weft docs',
         href: 'https://weft.ecnivs.com/docs/',
       },
-      { label: 'Weft source', href: 'https://github.com/ecnivslabs/weft' },
     ],
     name: 'Weft',
     tagline: 'Video, written in ASCII',
@@ -46,7 +45,6 @@ export const PRODUCTS: Product[] = [
     preview: '/products/olive-website.webp',
     resources: [
       { label: 'Olive docs', href: 'https://olive.ecnivs.com/docs/' },
-      { label: 'Olive download', href: 'https://olive.ecnivs.com/download/' },
     ],
     name: 'Olive',
     tagline: 'A systems language you can read.',
@@ -64,7 +62,6 @@ export const PRODUCTS: Product[] = [
     preview: '/products/pixie-frame-preview.webp',
     resources: [
       { label: 'Pixie docs', href: 'https://pixie.ecnivs.com/guide' },
-      { label: 'Pixie availability', href: 'https://pixie.ecnivs.com/downloads' },
     ],
     name: 'Pixie',
     tagline: 'Your terminal. Your kind of agent.',

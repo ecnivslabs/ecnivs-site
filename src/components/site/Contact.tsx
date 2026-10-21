@@ -1,6 +1,12 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react'
-import { Check, Envelope, WhatsappLogo } from '@phosphor-icons/react'
+import {
+  ArrowUpRight,
+  Check,
+  Envelope,
+  WhatsappLogo,
+} from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button'
+import { SOCIAL } from '@/data/social'
 import { cn } from '@/lib/utils'
 import { Reveal } from './Reveal'
 
@@ -189,8 +195,8 @@ export function Contact() {
             Got an idea?
           </h2>
           <p className="mt-4 text-muted-foreground">
-            A video idea, a collaboration, or something we should look into.
-            Send it our way.
+            A freelance project, a contract, a collaboration, or a video idea.
+            Tell us what you have in mind.
           </p>
           <div className="contact-direct">
             <Button asChild>
@@ -205,6 +211,16 @@ export function Contact() {
             <Button variant="ghost" asChild>
               <a href="mailto:hello@ecnivs.com">
                 <Envelope size={20} aria-hidden="true" /> Email
+              </a>
+            </Button>
+            <Button variant="ghost" asChild>
+              <a href={SOCIAL.contra} target="_blank" rel="noreferrer">
+                <ArrowUpRight size={20} aria-hidden="true" /> Contra
+              </a>
+            </Button>
+            <Button variant="ghost" asChild>
+              <a href={SOCIAL.upwork} target="_blank" rel="noreferrer">
+                <ArrowUpRight size={20} aria-hidden="true" /> Upwork
               </a>
             </Button>
           </div>

@@ -77,6 +77,28 @@
     background: hsl(var(--accent));
     color: hsl(var(--accent-foreground));
   }
+  :where(
+    button,
+    [role='button'],
+    [data-slot='button'],
+    nav,
+    label,
+    img,
+    svg,
+    .skip-link,
+    .editorial-link,
+    .page-home-link,
+    .product-card-link,
+    .video-watch,
+    .social-strip a
+  ) {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  :where(input, textarea, [contenteditable]:not([contenteditable='false'])) {
+    -webkit-user-select: text;
+    user-select: text;
+  }
   * {
     scrollbar-color: hsl(var(--border)) transparent;
     scrollbar-width: thin;

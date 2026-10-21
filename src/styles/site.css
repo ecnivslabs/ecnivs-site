@@ -305,10 +305,14 @@
   line-height: 1.8;
 }
 .contact-direct {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 400px;
   gap: 12px;
   margin-top: 28px;
+}
+.contact-direct [data-slot='button'] {
+  padding-inline: 12px;
 }
 .contact-form {
   border-left: 2px solid hsl(var(--border));
@@ -413,9 +417,6 @@
   }
   .hero-actions [data-slot='button'] {
     padding-inline: 20px;
-  }
-  .contact-direct a {
-    padding-inline: 18px;
   }
   .product-details {
     padding: 20px;
