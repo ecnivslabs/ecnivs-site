@@ -193,6 +193,49 @@ export function PrivacyPolicy() {
           tracking.
         </p>
       </PageSection>
+      <PageSection title="Optional app diagnostics">
+        <p>
+          Where an ecnivs app offers optional diagnostics, its collection notice
+          explains the reports and controls before you choose. On may be offered
+          first, but reports do not start until you save a choice. Closing the
+          notice does not give consent. Choose Off in the app’s diagnostics or
+          privacy controls at any time; all features and account access remain
+          available. The choice applies to that installation. Supported
+          command-line clients also honour DO_NOT_TRACK=1 or
+          DISABLE_TELEMETRY=1.
+        </p>
+        <p>
+          These reports help us investigate reliability and improve our apps.
+          They contain run outcomes and duration, model usage-report and
+          tool-call counts, input, output and cache token counts, app version,
+          operating system and architecture, and whether work ran in a child
+          task. A random batch reference prevents duplicate submissions.
+          Diagnostic payloads do not contain prompts, conversations, source
+          code, filenames, file paths, tool arguments or output, error messages,
+          stack traces or provider API keys.
+        </p>
+        <p>
+          Uploads authenticate with your app account. We associate diagnostic
+          batches with that account for access control and deletion; these
+          reports are not anonymous. Unsent reports are queued only in memory.
+          The app checks your preference before collecting and before sending,
+          and discards queued reports on sign-out or withdrawal. A local record
+          stores your choice, the notice version and the time you saved it.
+          Changing the setting does not automatically erase reports already
+          received. You can request their removal at support@ecnivs.com.
+        </p>
+        <p>
+          Diagnostic batches are removed from active storage after 30 days by
+          routine maintenance, or when the account is deleted. Protected backup
+          copies can remain until daily backup rotation removes them, normally
+          around two weeks for these reports. Necessary account security
+          records, feedback you explicitly submit, local app records and
+          monitoring collectors you configure yourself are separate from this
+          optional setting. Model providers and independently installed
+          extensions have their own data practices; consult their notices and
+          controls.
+        </p>
+      </PageSection>
       <PageSection title="Retention and deletion">
         <PageList
           items={[
@@ -201,7 +244,7 @@ export function PrivacyPolicy() {
             'Our current hosted account service uses sessions lasting up to 30 days without renewal, verification links lasting one hour, reset links lasting 30 minutes and device codes lasting ten minutes. Expired authentication records are removed by routine maintenance.',
             'Queued account email bodies are cleared after acceptance by the mail service. Queue metadata and associated delivery records are removed after 30 days.',
             'Administrative change history in our current hosted account service is retained for 180 days for access reviews and security investigations. Authentication replay checks expire after two minutes.',
-            'Routine backups of our current hosted account database are retained for 14 days. Deleted records can remain in protected backups until those backups expire.',
+            'Routine backups of our current hosted account database are retained for around two weeks under daily rotation. Deleted records can remain in protected backups until that rotation removes them.',
             'Support messages are kept while needed to resolve the request and manage relevant follow-up, security or legal obligations. Optional update or waitlist details are kept while that purpose continues, or until you ask to leave.',
           ]}
         />
