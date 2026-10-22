@@ -309,11 +309,13 @@ export function PrivacyPolicy() {
           Pixie also offers optional daily usage history in account Settings.
           This separate choice is off until you enable it. It saves daily turn,
           model-call, tool-execution and input/output token totals from new
-          optional app reports for 365 UTC dates. It does not retain diagnostic
-          samples for longer or recover older activity. Turning history off
-          deletes those daily totals from active storage. Account exports
-          include this preference and saved history; account deletion removes
-          both. Protected backups follow the rotation described below.
+          optional app reports while your account exists, until you turn history
+          off. Earlier 365-day choices keep that limit until you explicitly
+          choose yearly history. It does not retain diagnostic samples for
+          longer or recover expired activity. Turning history off deletes those
+          daily totals from active storage. Account exports include this
+          preference and saved history; account deletion removes both. Protected
+          backups follow the rotation described below.
         </p>
       </PageSection>
       <PageSection title="Retention and deletion">
