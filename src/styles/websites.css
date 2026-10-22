@@ -1,0 +1,165 @@
+.page-websites .page-container {
+  max-width: 1280px;
+}
+.page-websites main {
+  padding-bottom: 0;
+}
+.page-websites .contact-layout {
+  padding-inline: 0;
+}
+.page-websites .page-section-body {
+  max-width: none;
+}
+.page-websites .page-heading {
+  padding-block: 40px 48px;
+}
+.page-websites .page-heading h1 {
+  max-width: none;
+  font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+}
+.page-websites .page-intro {
+  max-width: 66ch;
+  margin-top: 24px;
+}
+.page-websites .page-intro > p:first-child {
+  max-width: 54ch;
+}
+.websites-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  margin-top: 28px;
+}
+.websites-billing-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border: 2px solid hsl(var(--border));
+  background: hsl(var(--surface));
+  box-shadow: 4px 4px 0 var(--shadow);
+}
+.websites-billing-option {
+  min-width: 0;
+  padding: 24px;
+}
+.websites-billing-option + .websites-billing-option {
+  border-left: 2px solid hsl(var(--border));
+}
+.page-websites h3 {
+  color: hsl(var(--foreground));
+  font-size: 21px;
+  font-weight: 750;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+.websites-price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 20px;
+  color: hsl(var(--foreground));
+}
+.websites-price strong {
+  font-size: clamp(2.75rem, 4vw, 3.5rem);
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  line-height: 1;
+}
+.websites-price span {
+  font-size: 13px;
+}
+.websites-billing-total {
+  margin-top: 12px;
+  font-size: 14px;
+}
+.page-websites .websites-pricing-note {
+  margin-top: 24px;
+  font-size: 14px;
+}
+.websites-feature-list,
+.websites-process-list {
+  display: grid;
+  gap: 32px 56px;
+}
+.page-websites :is(#what-s-included, #how-it-works) {
+  display: block;
+}
+.page-websites :is(#what-s-included, #how-it-works) .page-section-body {
+  margin-top: 32px;
+}
+.websites-feature-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding: 32px;
+  border: 2px solid hsl(var(--border));
+  background: hsl(var(--surface));
+  box-shadow: 4px 4px 0 var(--shadow);
+}
+.websites-process-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.websites-feature-list p,
+.websites-process-list p {
+  margin-top: 12px;
+}
+.websites-questions details {
+  padding-block: 18px;
+  border-bottom: 1px solid hsl(var(--border) / 0.6);
+}
+.websites-questions details:first-child {
+  padding-top: 0;
+}
+.websites-questions summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 44px;
+  cursor: pointer;
+  list-style: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  user-select: none;
+}
+.websites-questions summary::-webkit-details-marker {
+  display: none;
+}
+.websites-questions summary span {
+  flex: none;
+  color: hsl(var(--accent));
+  font-size: 24px;
+  transition: transform 180ms;
+}
+.websites-questions details[open] summary span {
+  transform: rotate(45deg);
+}
+.websites-questions details p {
+  margin-top: 12px;
+}
+@media (max-width: 767px) {
+  .page-websites .page-heading {
+    padding-block: 24px 36px;
+  }
+  .websites-feature-list,
+  .websites-process-list {
+    grid-template-columns: 1fr;
+  }
+  .websites-feature-list {
+    padding: 24px;
+  }
+}
+@media (max-width: 479px) {
+  .websites-billing-options {
+    grid-template-columns: 1fr;
+  }
+  .websites-billing-option + .websites-billing-option {
+    border-left: 0;
+    border-top: 2px solid hsl(var(--border));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .websites-questions summary span {
+    transition: none;
+  }
+}

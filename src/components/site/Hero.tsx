@@ -1,19 +1,12 @@
-import { motion, useReducedMotion } from 'motion/react'
 import { ArrowDown } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button'
 import { Logomark } from './Logomark'
 
 export function Hero() {
-  const reduceMotion = useReducedMotion()
   return (
     <section id="top" className="hero-section">
       <div className="hero-layout mx-auto w-full max-w-7xl px-6">
-        <motion.div
-          className="hero-copy"
-          initial={reduceMotion ? false : { opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
+        <div className="hero-copy">
           <p className="hero-eyebrow">ecnivs</p>
           <h1 className="hero-title">
             <span>For the</span>
@@ -22,8 +15,8 @@ export function Hero() {
           </h1>
           <div className="hero-bottom">
             <p>
-              Code, computers, and the occasional rabbit hole. We unpack the
-              tech, then build things of our own.
+              We make tech videos and build software. We also take on freelance
+              projects and contracts.
             </p>
             <div className="hero-actions">
               <Button size="lg" asChild>
@@ -41,7 +34,7 @@ export function Hero() {
               <li>Tech culture</li>
             </ul>
           </div>
-        </motion.div>
+        </div>
         <div className="hero-art" aria-hidden="true">
           <div className="hero-signature">
             <Logomark className="h-full w-full" />

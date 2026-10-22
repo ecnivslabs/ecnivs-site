@@ -61,7 +61,12 @@ jobs:
           npm run lint
 
       - name: Build
+        env:
+          VITE_INQUIRY_ENDPOINT: ${{ vars.VITE_INQUIRY_ENDPOINT }}
         run: npm run build
+
+      - name: Check SEO and internal links
+        run: npm run check:seo
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

@@ -1,7 +1,27 @@
-import type { ReactNode } from 'react'
-import { motion, useReducedMotion } from 'motion/react'
+import { useEffect, useRef, type ReactNode } from 'react'
 
-const EASE = [0.16, 1, 0.3, 1] as const
+let observer: IntersectionObserver | undefined
+function revealObserver() {
+  observer ??= new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue
+        observer?.unobserve(entry.target)
+        if (matchMedia('(prefers-reduced-motion: reduce)').matches) continue
+        entry.target.animate(
+          [{ transform: 'translateY(12px)' }, { transform: 'translateY(0)' }],
+          {
+            duration: 600,
+            delay: Number((entry.target as HTMLElement).dataset.revealDelay),
+            easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+          },
+        )
+      }
+    },
+    { threshold: 0.05 },
+  )
+  return observer
+}
 
 export function Reveal({
   children,
@@ -12,17 +32,20 @@ export function Reveal({
   delay?: number
   className?: string
 }) {
-  const reduceMotion = useReducedMotion()
-
+  const element = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    const target = element.current
+    if (!target || !('IntersectionObserver' in window)) return
+    const current = revealObserver()
+    current.observe(target)
+    return () => {
+      current.unobserve(target)
+      for (const animation of target.getAnimations()) animation.cancel()
+    }
+  }, [])
   return (
-    <motion.div
-      initial={reduceMotion ? false : { y: 12 }}
-      whileInView={{ y: 0 }}
-      viewport={{ once: true, amount: 0.05 }}
-      transition={{ duration: 0.6, delay, ease: EASE }}
-      className={className}
-    >
+    <div ref={element} className={className} data-reveal-delay={delay * 1000}>
       {children}
-    </motion.div>
+    </div>
   )
 }

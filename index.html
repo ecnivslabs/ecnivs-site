@@ -20,21 +20,21 @@
     <meta name="theme-color" content="#0F0D0E" />
     <meta
       name="description"
-      content="Code, computers, and the occasional rabbit hole. Explore tech videos and original projects from ecnivs."
+      content="Tech videos, original software and client work from ecnivs. Explore our projects, hire us for freelance work or contracts, or get a custom website."
     />
-    <link rel="canonical" href="https://ecnivs.com" />
+    <link rel="canonical" href="https://ecnivs.com/" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="ecnivs" />
     <meta
       property="og:title"
-      content="ecnivs &middot; For the terminally curious"
+      content="ecnivs · Tech videos, software &amp; freelance projects"
     />
     <meta
       property="og:description"
-      content="Code, computers, and the occasional rabbit hole. Explore tech videos and original projects from ecnivs."
+      content="Tech videos, original software and client work from ecnivs. Explore our projects, hire us for freelance work or contracts, or get a custom website."
     />
-    <meta property="og:url" content="https://ecnivs.com" />
+    <meta property="og:url" content="https://ecnivs.com/" />
     <meta
       property="og:image"
       content="https://ecnivs.com/og.png?v=curious-v1"
@@ -48,10 +48,13 @@
     <meta property="og:image:height" content="630" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="ecnivs · For the terminally curious" />
+    <meta
+      name="twitter:title"
+      content="ecnivs · Tech videos, software &amp; freelance projects"
+    />
     <meta
       name="twitter:description"
-      content="Code, computers, and the occasional rabbit hole. Explore tech videos and original projects from ecnivs."
+      content="Tech videos, original software and client work from ecnivs. Explore our projects, hire us for freelance work or contracts, or get a custom website."
     />
     <meta
       name="twitter:image"
@@ -62,20 +65,56 @@
       content="ecnivs: For the terminally curious"
     />
 
-    <title>ecnivs &middot; For the terminally curious</title>
-
+    <title>ecnivs · Tech videos, software &amp; freelance projects</title>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Brand",
-        "name": "ecnivs",
-        "url": "https://ecnivs.com",
-        "logo": "https://ecnivs.com/icon-512.png",
-        "description": "A tech brand exploring programming, systems, and original projects through videos and experiments.",
-        "sameAs": [
-          "https://github.com/ecnivslabs",
-          "https://www.youtube.com/@ecnivs",
-          "https://www.instagram.com/ecnivslabs/"
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://ecnivs.com/#webpage",
+            "url": "https://ecnivs.com/",
+            "name": "ecnivs · Tech videos, software & freelance projects",
+            "description": "Tech videos, original software and client work from ecnivs. Explore our projects, hire us for freelance work or contracts, or get a custom website.",
+            "isPartOf": {
+              "@id": "https://ecnivs.com/#website"
+            },
+            "inLanguage": "en",
+            "about": {
+              "@id": "https://ecnivs.com/#brand"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://ecnivs.com/#website",
+            "name": "ecnivs",
+            "url": "https://ecnivs.com/",
+            "publisher": {
+              "@id": "https://ecnivs.com/about/#vince"
+            }
+          },
+          {
+            "@type": "Brand",
+            "@id": "https://ecnivs.com/#brand",
+            "name": "ecnivs",
+            "url": "https://ecnivs.com/",
+            "logo": "https://ecnivs.com/icon-512.png",
+            "description": "Tech videos, original software, freelance projects and contracts.",
+            "sameAs": [
+              "https://github.com/ecnivslabs",
+              "https://www.youtube.com/@ecnivs",
+              "https://www.instagram.com/ecnivslabs/"
+            ]
+          },
+          {
+            "@type": "Person",
+            "@id": "https://ecnivs.com/about/#vince",
+            "name": "Vince Hika Swu",
+            "url": "https://ecnivs.com/about/",
+            "brand": {
+              "@id": "https://ecnivs.com/#brand"
+            }
+          }
         ]
       }
     </script>

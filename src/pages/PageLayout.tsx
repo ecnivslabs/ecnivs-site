@@ -5,17 +5,19 @@ import { Footer } from '@/components/site/Footer'
 
 export function PageLayout({
   title,
+  eyebrow,
   subtitle,
   intro,
   media,
   variant = 'document',
   children,
 }: {
-  title: string
+  title: ReactNode
+  eyebrow?: string
   subtitle?: string
   intro?: ReactNode
   media?: ReactNode
-  variant?: 'document' | 'about' | 'support'
+  variant?: 'document' | 'about' | 'support' | 'websites'
   children: ReactNode
 }) {
   const sections = Children.toArray(children).flatMap((child) =>
@@ -44,6 +46,7 @@ export function PageLayout({
       <main id="main" className="page-container">
         <div className="page-heading">
           <div className="page-heading-copy">
+            {eyebrow && <p className="section-label">{eyebrow}</p>}
             <h1>{title}</h1>
             {subtitle && <p className="page-subtitle">{subtitle}</p>}
             {intro && <div className="page-intro">{intro}</div>}
@@ -81,9 +84,11 @@ function sectionId(title: string) {
 
 export function PageSection({
   title,
+  eyebrow,
   children,
 }: {
   title: string
+  eyebrow?: string
   children: ReactNode
 }) {
   return (
@@ -92,7 +97,10 @@ export function PageSection({
       id={sectionId(title)}
       aria-labelledby={`${sectionId(title)}-title`}
     >
-      <h2 id={`${sectionId(title)}-title`}>{title}</h2>
+      <header className="page-section-heading">
+        {eyebrow && <p className="section-label">{eyebrow}</p>}
+        <h2 id={`${sectionId(title)}-title`}>{title}</h2>
+      </header>
       <div className="page-section-body">{children}</div>
     </section>
   )

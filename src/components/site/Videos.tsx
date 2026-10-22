@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useSyncExternalStore } from 'react'
 import { ArrowUpRight, YoutubeLogo, InstagramLogo } from '@phosphor-icons/react'
 import {
   VIDEOS,
@@ -48,9 +48,13 @@ function VideoCard({ video, latest }: { video: Video; latest: boolean }) {
   )
 }
 
+const subscribeFreshness = () => () => {}
+
 export function Videos() {
-  const [stale] = useState(
+  const stale = useSyncExternalStore(
+    subscribeFreshness,
     () => Date.now() - Date.parse(VIDEOS_UPDATED_AT) > 24 * 60 * 60 * 1000,
+    () => false,
   )
   return (
     <section

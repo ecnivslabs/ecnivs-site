@@ -4,7 +4,7 @@ export function TermsOfService() {
   return (
     <PageLayout
       title="Terms of service"
-      subtitle="Updated 21 October 2026"
+      subtitle="Updated 22 October 2026"
       intro={<p>Terms for ecnivs websites, products and services.</p>}
     >
       <PageSection title="About these terms">
@@ -100,6 +100,66 @@ export function TermsOfService() {
           External providers may charge under their own terms. Free access to an
           ecnivs service does not include credits or subscriptions from another
           provider unless the offer explicitly says so.
+        </p>
+      </PageSection>
+      <PageSection title="Website services">
+        <p>
+          Full websites and online stores include their backend, admin panel,
+          analytics dashboard, hosting and technical maintenance. Choose $20 USD
+          billed monthly or $180 USD billed yearly, equivalent to $15 per month.
+          Both billing options include the same agreed features, with no setup
+          fee and no ecnivs commission on sales. Monthly subscriptions have no
+          minimum term; yearly subscriptions are paid for a full year in
+          advance. Before subscribing, we agree the project scope, supported
+          features, billing start date, renewal date, applicable taxes and
+          refund conditions in writing. An enquiry does not start billing.
+        </p>
+        <p>
+          The initial build includes up to five informational pages and two
+          design revision rounds, plus the customer, admin and commerce screens
+          agreed for the project. Your frontend is designed for your brand.
+          Editing controls allow permitted accounts to change supported colours,
+          copy, images and content; they are not an unrestricted page builder.
+          You supply content and product information you are entitled to use.
+          Routine maintenance and help using the site are included. New pages,
+          redesigns, ongoing content entry, custom features and extra
+          integrations require a separate quote and your approval. These plans
+          do not include custom SaaS application development or an unrestricted
+          development service.
+        </p>
+        <p>
+          You own or control your domain and connected payment and email
+          accounts. We configure the agreed integrations with your permission.
+          Domain registration, email delivery, payment processing and other
+          external provider charges are separate and payable to those providers.
+          We do not operate your email inbox or act as the seller of your
+          products. You remain responsible for your catalog, customer service,
+          fulfilment, tax obligations and lawful business operations. Carrier
+          tracking and other integrations depend on provider support.
+        </p>
+        <p>
+          You retain your rights in your domain, supplied content and business
+          data. You permit us to use them to build, host and maintain the agreed
+          site. The subscription provides access to a hosted website, not
+          delivery or transfer of our proprietary source code, platform or
+          reusable components. Separate software licenses and mandatory rights
+          remain unaffected.
+        </p>
+        <p>
+          Cancel by emailing{' '}
+          <a href="mailto:hello@ecnivs.com?subject=Website%20subscription%20cancellation">
+            hello@ecnivs.com
+          </a>{' '}
+          before the next renewal. Cancellation stops the next renewal; hosting
+          continues through the paid month or year and then ends. Cancellation
+          does not by itself create a refund for unused time; refund conditions
+          are agreed before subscribing, subject to applicable rights. We verify
+          the request before changing a subscription. Contact us before hosting
+          ends to arrange an export of your supplied content and business
+          records, excluding other customers’ information, secrets and our
+          proprietary source code. Data return, deletion, backup retention,
+          relevant providers and any required data-processing agreement are
+          documented for the project before personal information is collected.
         </p>
       </PageSection>
       <PageSection title="Software and your work">

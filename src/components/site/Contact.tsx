@@ -227,6 +227,9 @@ export function Contact() {
         </Reveal>
 
         <Reveal delay={0.08} className="contact-form">
+          <noscript>
+            <style>{`.contact-form { display: none; }`}</style>
+          </noscript>
           <form onSubmit={handleSubmit} noValidate className="space-y-6">
             <div className="sr-only" aria-hidden="true">
               <label htmlFor="company">Company</label>

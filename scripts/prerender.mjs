@@ -20,14 +20,15 @@ try {
     const html = await readFile(target, 'utf8')
     const marker = '<div id="root"></div>'
     if (!html.includes(marker)) throw new Error(`Missing page mount: ${file}`)
-    await writeFile(
-      target,
-      html.replace(marker, () => `<div id="root">${content}</div>`),
-    )
+    let rendered = html.replace(marker, () => `<div id="root">${content}</div>`)
+    if (file !== 'index.html' && file !== 'websites/index.html') {
+      rendered = rendered
+        .replace(/<script\b[^>]*\btype="module"[^>]*>[\s\S]*?<\/script>/g, '')
+        .replace(/<link\b[^>]*\brel="modulepreload"[^>]*>/g, '')
+    }
+    await writeFile(target, rendered)
   }
-  console.log(
-    `Prerendered ${Object.keys(pages).length} support and policy pages.`,
-  )
+  console.log(`Prerendered ${Object.keys(pages).length} pages.`)
 } finally {
   await server.close()
 }

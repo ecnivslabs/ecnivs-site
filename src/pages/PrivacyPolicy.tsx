@@ -4,7 +4,7 @@ export function PrivacyPolicy() {
   return (
     <PageLayout
       title="Privacy policy"
-      subtitle="Updated 21 October 2026"
+      subtitle="Updated 22 October 2026"
       intro={
         <p>
           How ecnivs handles information across our websites, products and
@@ -48,6 +48,45 @@ export function PrivacyPolicy() {
           repository content in support requests. We may ask for limited
           information to verify account ownership before disclosing or deleting
           data.
+        </p>
+      </PageSection>
+      <PageSection title="Client projects and websites">
+        <p>
+          For freelance projects, contracts and website subscriptions, we handle
+          contact details, business requirements, supplied content, project
+          correspondence and billing records to discuss and deliver the work.
+          With your permission, we may access domain settings and connected
+          service accounts to configure or maintain your site. Credentials
+          belong in an agreed secure setup process, not an enquiry form or
+          ordinary support message. Access is limited to the work authorised and
+          removed when it is no longer needed.
+        </p>
+        <p>
+          A client’s website or store may process customer account details,
+          delivery addresses, orders, payment references, reviews and website
+          activity, depending on its features. The client determines its
+          business purposes and provides the privacy notice for that site. Where
+          we host or maintain this information on the client’s behalf, we follow
+          the documented project instructions and applicable data-processing
+          terms. We do not use one client’s customer records for another client
+          or for our own advertising.
+        </p>
+        <p>
+          Connected payment and email providers process information needed for
+          their services under the client’s accounts. We agree the hosting
+          providers, access, retention, backups, data return and deletion
+          arrangements before launching features that collect personal
+          information. The retention periods for ecnivs app accounts elsewhere
+          in this policy do not automatically apply to client stores. Necessary
+          project and billing records may remain for contractual, security or
+          legal obligations after the work ends.
+        </p>
+        <p>
+          If your request concerns a purchase or account on a client’s site,
+          contact that business first. We assist the client with verified
+          privacy requests for information we process on its behalf. For
+          enquiries and project information you give directly to ecnivs, use the
+          contact and rights sections of this policy.
         </p>
       </PageSection>
       <PageSection title="Accounts and product use">
@@ -265,6 +304,16 @@ export function PrivacyPolicy() {
           optional setting. Model providers and independently installed
           extensions have their own data practices; consult their notices and
           controls.
+        </p>
+        <p>
+          Pixie also offers optional daily usage history in account Settings.
+          This separate choice is off until you enable it. It saves daily turn,
+          model-call, tool-execution and input/output token totals from new
+          optional app reports for 365 UTC dates. It does not retain diagnostic
+          samples for longer or recover older activity. Turning history off
+          deletes those daily totals from active storage. Account exports
+          include this preference and saved history; account deletion removes
+          both. Protected backups follow the rotation described below.
         </p>
       </PageSection>
       <PageSection title="Retention and deletion">

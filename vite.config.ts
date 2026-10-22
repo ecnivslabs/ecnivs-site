@@ -16,6 +16,7 @@ export default defineConfig({
       input: {
         main: path.resolve(import.meta.dirname, 'index.html'),
         about: path.resolve(import.meta.dirname, 'about/index.html'),
+        websites: path.resolve(import.meta.dirname, 'websites/index.html'),
         companyRedirect: path.resolve(
           import.meta.dirname,
           'company/index.html',

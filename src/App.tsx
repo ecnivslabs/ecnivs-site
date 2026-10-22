@@ -5,6 +5,7 @@ import { About } from '@/components/site/About'
 import { Contact } from '@/components/site/Contact'
 import { Footer } from '@/components/site/Footer'
 import { Videos } from '@/components/site/Videos'
+import { Work } from '@/components/site/Work'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Videos />
         <Products />
         <About />
+        <Work />
         <Contact />
       </main>
 

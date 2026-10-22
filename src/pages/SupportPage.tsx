@@ -41,7 +41,7 @@ export function SupportPage() {
         <p>
           For installation and usage instructions, start with the documentation
           on the product’s website. You can find our current projects in the{' '}
-          <a href="/products/">product directory</a>.
+          <a href="/#releases">project directory</a>.
         </p>
       </PageSection>
       <PageSection title="Account and privacy requests">
