@@ -21,7 +21,7 @@ try {
     const marker = '<div id="root"></div>'
     if (!html.includes(marker)) throw new Error(`Missing page mount: ${file}`)
     let rendered = html.replace(marker, () => `<div id="root">${content}</div>`)
-    if (file !== 'index.html' && file !== 'websites/index.html') {
+    if (file !== 'index.html' && file !== 'sites/index.html') {
       rendered = rendered
         .replace(/<script\b[^>]*\btype="module"[^>]*>[\s\S]*?<\/script>/g, '')
         .replace(/<link\b[^>]*\brel="modulepreload"[^>]*>/g, '')

@@ -11,7 +11,7 @@ export function Nav() {
           <Wordmark />
         </a>
         <nav className="site-header-links" aria-label="Main navigation">
-          <a href="/websites/" className="site-websites-link">
+          <a href="/sites/" className="site-websites-link">
             Websites
           </a>
           <Button asChild>

@@ -32,6 +32,8 @@ GitHub Pages deploys `master` using `.github/workflows/deploy.yml`. The existing
 
 Product websites should link to the canonical shared support and legal pages. Preserve already-published redirects and incoming fragments when reorganizing content. This avoids duplicated policies and broken saved links.
 
+Website services use `/sites/` as the canonical route. `/websites/` and `/website/` redirect there using static pages, matching the existing `/company/` redirect on GitHub Pages. JavaScript preserves query strings and fragments; without JavaScript, a meta refresh and visible link lead to `/sites/`.
+
 ## Shared-page ownership
 
 Support, privacy and terms represent ecnivs across its products and services. They must not duplicate a product catalogue, launch status, account walkthrough or release FAQ. The existing product directory and footer already read from `src/data/products.ts`; adding a product there does not require changing these shared pages. Product-specific instructions belong with that product.

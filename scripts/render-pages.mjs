@@ -15,7 +15,7 @@ export function renderPages() {
       ['privacy/index.html', PrivacyPolicy],
       ['terms/index.html', TermsOfService],
       ['support/index.html', SupportPage],
-      ['websites/index.html', WebsitesPage],
+      ['sites/index.html', WebsitesPage],
     ].map(([file, Component]) => [
       file,
       renderToString(createElement(StrictMode, null, createElement(Component))),

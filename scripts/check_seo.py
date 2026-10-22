@@ -32,7 +32,7 @@ class Page(HTMLParser):
         if tag == 'html':
             self.language = attrs.get('lang')
         elif tag == 'meta':
-            key = attrs.get('name', attrs.get('property'))
+            key = attrs.get('name', attrs.get('property', attrs.get('http-equiv')))
             if key:
                 self.meta.setdefault(key, []).append(attrs.get('content', ''))
         elif tag == 'link' and attrs.get('rel') == 'canonical':
@@ -74,6 +74,22 @@ def check_site(output):
     urls = [node.text for node in sitemap.findall('.//{*}loc')]
     check(len(urls) == len(set(urls)), 'Sitemap contains duplicate URLs')
     check(origin in urls, 'Sitemap must include the homepage')
+    check(f'{origin}sites/' in urls, 'Sitemap must include website services at /sites/')
+    redirects = {'/websites/': '/sites/', '/website/': '/sites/'}
+    for route, target in redirects.items():
+        url = urljoin(origin, route)
+        check(url not in urls, f'Redirect must not appear in sitemap: {url}')
+        path = output / route.lstrip('/') / 'index.html'
+        check(path.is_file(), f'Missing redirect page: {route}')
+        if not path.is_file():
+            continue
+        page = Page(path.read_text())
+        check(page.canonicals == [urljoin(origin, target)],
+              f'{route}: redirect needs the destination canonical')
+        check(page.meta.get('robots') == ['noindex'], f'{route}: redirect must be noindex')
+        check(page.meta.get('refresh') == [f'0; url={target}'],
+              f'{route}: missing immediate redirect without JavaScript')
+        check(target in page.links, f'{route}: missing visible destination link')
     pages = {}
     for url in urls:
         check(url.startswith(origin), f'Unexpected sitemap origin: {url}')
@@ -120,6 +136,8 @@ def check_site(output):
             target = urlsplit(urljoin(url, href))
             if target.scheme not in ('http', 'https') or target.netloc != 'ecnivs.com':
                 continue
+            check(target.path.rstrip('/') + '/' not in redirects,
+                  f'{url}: internal link uses a legacy route {href}')
             target_url = origin.rstrip('/') + target.path
             if target_url in pages:
                 check(not target.fragment or unquote(target.fragment) in pages[target_url].ids,
