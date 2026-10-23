@@ -16,7 +16,7 @@ export function Work() {
           <div className="work-actions">
             <Button variant="ghost" asChild>
               <a href="/sites/">
-                Explore websites <ArrowUpRight size={18} aria-hidden="true" />
+                Explore Sites <ArrowUpRight size={18} aria-hidden="true" />
               </a>
             </Button>
             <a className="editorial-link" href="#contact">

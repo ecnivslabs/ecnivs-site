@@ -12,7 +12,7 @@ export function Nav() {
         </a>
         <nav className="site-header-links" aria-label="Main navigation">
           <a href="/sites/" className="site-websites-link">
-            Websites
+            Sites
           </a>
           <Button asChild>
             <a href={SOCIAL.youtube} target="_blank" rel="noreferrer">
