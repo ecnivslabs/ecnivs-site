@@ -4,7 +4,7 @@ export function TermsOfService() {
   return (
     <PageLayout
       title="Terms of service"
-      subtitle="Updated 22 October 2026"
+      subtitle="Updated 25 October 2026"
       intro={<p>Terms for ecnivs websites, products and services.</p>}
     >
       <PageSection title="About these terms">
@@ -92,6 +92,15 @@ export function TermsOfService() {
           paid offer before we charge you.
         </p>
         <p>
+          Our <a href="/cancellation-refund/">cancellation and refund policy</a>{' '}
+          applies to all purchases directly from ecnivs, including current and
+          future services. It explains how to stop renewals, what happens to
+          paid access, refunds for billing errors or failure to deliver, and the
+          request and processing timelines. An offer may grant additional refund
+          rights, but cannot remove the refund rights in that policy or
+          mandatory consumer protections.
+        </p>
+        <p>
           Free access, previews and beta features can change or end.
           Availability and release information belong to the relevant product.
           Announcing a feature does not promise delivery by a particular date.
@@ -111,8 +120,9 @@ export function TermsOfService() {
           fee and no ecnivs commission on sales. Monthly subscriptions have no
           minimum term; yearly subscriptions are paid for a full year in
           advance. Before subscribing, we agree the project scope, supported
-          features, billing start date, renewal date, applicable taxes and
-          refund conditions in writing. An enquiry does not start billing.
+          features, billing start date, renewal date, applicable taxes and any
+          additional refund rights in writing. The shared cancellation and
+          refund policy applies. An enquiry does not start billing.
         </p>
         <p>
           The initial build includes up to five informational pages and two
@@ -146,20 +156,15 @@ export function TermsOfService() {
           remain unaffected.
         </p>
         <p>
-          Cancel by emailing{' '}
-          <a href="mailto:hello@ecnivs.com?subject=Website%20subscription%20cancellation">
-            hello@ecnivs.com
-          </a>{' '}
-          before the next renewal. Cancellation stops the next renewal; hosting
-          continues through the paid month or year and then ends. Cancellation
-          does not by itself create a refund for unused time; refund conditions
-          are agreed before subscribing, subject to applicable rights. We verify
-          the request before changing a subscription. Contact us before hosting
-          ends to arrange an export of your supplied content and business
-          records, excluding other customers’ information, secrets and our
-          proprietary source code. Data return, deletion, backup retention,
-          relevant providers and any required data-processing agreement are
-          documented for the project before personal information is collected.
+          Cancel under the shared{' '}
+          <a href="/cancellation-refund/">cancellation and refund policy</a>.
+          Hosting continues through the paid month or year and then ends.
+          Contact us before hosting ends to arrange an export of your supplied
+          content and business records, excluding other customers’ information,
+          secrets and our proprietary source code. Data return, deletion, backup
+          retention, relevant providers and any required data-processing
+          agreement are documented for the project before personal information
+          is collected.
         </p>
       </PageSection>
       <PageSection title="Software and your work">

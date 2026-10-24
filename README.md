@@ -1,12 +1,12 @@
 # ecnivs website
 
-React and Vite serve the ecnivs site and its shared support, privacy and terms pages. Support and legal pages reuse the existing ecnivs layout, palette, typography, buttons and footer.
+React and Vite serve the ecnivs site and its shared support, privacy, terms and cancellation/refund pages. Support and legal pages reuse the existing ecnivs layout, palette, typography, buttons and footer.
 
 ## Development and verification
 
 Install dependencies with `npm ci`. Run `npm run dev` for local development, `npm run lint` for source checks, `npm run test:videos` for the video data tests and `npm run build` for TypeScript checking and the production build.
 
-The build prerenders `/support/`, `/privacy/` and `/terms/` with the existing React server renderer through Vite. Their essential content and contact links work without JavaScript. Client entry points hydrate that markup, or render normally during development. The temporary Vite renderer is closed after the build.
+The build prerenders `/support/`, `/privacy/`, `/terms/` and `/cancellation-refund/` with the existing React server renderer through Vite. Their essential content and contact links work without JavaScript. Client entry points hydrate that markup, or render normally during development. The temporary Vite renderer is closed after the build.
 
 The contact form reports success only after its configured endpoint accepts the request. Honeypot and duplicate-submission checks do not claim delivery. Request failures preserve entered fields; restricted browser storage cannot block delivery or turn an accepted request into a failure. An unconfigured form provides a direct email alternative. The implementation's optional duplicate timestamp is not a server-side abuse-control guarantee.
 
@@ -36,18 +36,19 @@ Website services use `/sites/` as the canonical route. `/websites/` and `/websit
 
 ## Shared-page ownership
 
-Support, privacy and terms represent ecnivs across its products and services. They must not duplicate a product catalogue, launch status, account walkthrough or release FAQ. The existing product directory and footer already read from `src/data/products.ts`; adding a product there does not require changing these shared pages. Product-specific instructions belong with that product.
+Support, privacy, terms and cancellation/refunds represent ecnivs across its products and services. They must not duplicate a product catalogue, launch status, account walkthrough or release FAQ. The existing product directory and footer already read from `src/data/products.ts`; adding a product there does not require changing these shared pages. Product-specific instructions belong with that product.
+
+The canonical `/cancellation-refund/` policy applies by purchase type to all current and future direct ecnivs sales. Voluntary subscription cancellation stops renewals, preserves access through the paid period and does not refund unused time. The policy separately covers one-time purchases, authorised project work, prepaid usage, billing errors, non-delivery and service discontinuation. Offers must disclose scope, billing and any additional refund rights before purchase; silence does not exclude a service from the shared rules, and an offer cannot remove the policy’s refund rights. Adding a service that follows these defaults does not require editing the policy. Different business practices still require review and appropriate disclosure before sale. Refund initiation and bank settlement are separate timelines, informed by [Razorpay’s normal-refund documentation](https://razorpay.com/docs/payments/refunds/normal/). This policy does not enable payments or establish gateway approval.
 
 The shared privacy notice retains concrete, inspected data categories, purposes, providers, current hosted-account retention and rights. It applies relevant sections according to the service used. New data practices, processors, retention or contractual conditions still require review before they change. Avoid vague wording merely to eliminate maintenance. Feature-specific disclosures belong at the point of use and supplement the shared notice when needed. This follows the [ICO layered-notice guidance](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/individual-rights/the-right-to-be-informed/what-methods-can-we-use-to-provide-privacy-information/), used as transparency guidance rather than a claim of universal legal compliance.
 
-The three existing product-named fragment IDs are retained only for already-published incoming links. They produce no product-specific heading or content and do not require aliases for new products. Use `/support/`, `/privacy/` and `/terms/` for new shared links.
+The three existing product-named fragment IDs are retained only for already-published incoming links. They produce no product-specific heading or content and do not require aliases for new products. Use `/support/`, `/privacy/`, `/terms/` and `/cancellation-refund/` for new shared links.
 
 ## Security archive disclosure
 
 The shared privacy notice describes selected security metadata, its purposes, restricted access, storage in India and a 180-day retention period. It distinguishes necessary service security records from optional app diagnostics, feedback, support and providers' own records. Hostinger is named as the current account infrastructure provider, with the country confirmed by the operator. No product name, release state, new visual treatment, consent gate or tracking script is added. The notice is published before connecting production sources to the verified archive.
 
 The [CERT-In Directions, paragraph (iv)](https://www.cert-in.org.in/PDF/CERT-In_Directions_70B_28.04.2022.pdf) specify secure rolling 180-day ICT log retention in India for covered entities. This motivates a retained security archive; the privacy wording does not assert that a single archive satisfies every obligation or resolves the operator's legal classification. [OWASP logging guidance](https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html) supports purposeful event metadata, sensitive-content exclusion and restricted access. [ICO transparency guidance](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/individual-rights/the-right-to-be-informed/what-privacy-information-should-we-provide/) supports clear purposes, recipients and retention; it is used as a disclosure checklist, not a claim that UK law necessarily applies. The technical implementation and observed native verification remain in the owning service repository.
-
 
 ## User-facing copy review, 22 October 2026
 

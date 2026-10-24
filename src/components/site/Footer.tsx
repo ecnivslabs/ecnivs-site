@@ -39,6 +39,7 @@ const RESOURCE_LINKS: FooterLink[] = PRODUCTS.flatMap((product) =>
 const LEGAL_LINKS: FooterLink[] = [
   { label: 'Privacy policy', href: '/privacy/' },
   { label: 'Terms of service', href: '/terms/' },
+  { label: 'Cancellation and refunds', href: '/cancellation-refund/' },
 ]
 
 function FooterLinkItem({ label, href, external }: FooterLink) {

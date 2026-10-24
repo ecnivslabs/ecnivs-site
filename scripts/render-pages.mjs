@@ -2,6 +2,7 @@ import { createElement, StrictMode } from 'react'
 import { renderToString } from 'react-dom/server'
 import { PrivacyPolicy } from '../src/pages/PrivacyPolicy.tsx'
 import { TermsOfService } from '../src/pages/TermsOfService.tsx'
+import { CancellationRefundPolicy } from '../src/pages/CancellationRefundPolicy.tsx'
 import { SupportPage } from '../src/pages/SupportPage.tsx'
 import App from '../src/App.tsx'
 import { AboutPage } from '../src/pages/AboutPage.tsx'
@@ -14,6 +15,7 @@ export function renderPages() {
       ['about/index.html', AboutPage],
       ['privacy/index.html', PrivacyPolicy],
       ['terms/index.html', TermsOfService],
+      ['cancellation-refund/index.html', CancellationRefundPolicy],
       ['support/index.html', SupportPage],
       ['sites/index.html', WebsitesPage],
     ].map(([file, Component]) => [

@@ -44,6 +44,16 @@ export function SupportPage() {
           <a href="/#releases">project directory</a>.
         </p>
       </PageSection>
+      <PageSection title="Billing and cancellation">
+        <p>
+          To cancel a subscription or request a refund, email{' '}
+          <a href="mailto:support@ecnivs.com">support@ecnivs.com</a> with the
+          service and account or order concerned. Our{' '}
+          <a href="/cancellation-refund/">cancellation and refund policy</a>{' '}
+          explains eligibility, paid access and processing timelines across
+          ecnivs products and services.
+        </p>
+      </PageSection>
       <PageSection title="Account and privacy requests">
         <p>
           If your request concerns an account, email from its associated address

@@ -32,6 +32,10 @@ export default defineConfig({
         support: path.resolve(import.meta.dirname, 'support/index.html'),
         privacy: path.resolve(import.meta.dirname, 'privacy/index.html'),
         terms: path.resolve(import.meta.dirname, 'terms/index.html'),
+        cancellationRefund: path.resolve(
+          import.meta.dirname,
+          'cancellation-refund/index.html',
+        ),
       },
     },
   },
