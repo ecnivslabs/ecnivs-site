@@ -9,19 +9,17 @@ export type Product = {
   url: string
   resources?: { label: string; href: string }[]
   status: ProductStatus
+  preview: string
   license?: {
     name: string
     covers: string
   }
-} & (
-  | { livePreview: true; preview?: never }
-  | { livePreview?: false; preview: string }
-)
+}
 
 export const PRODUCTS: Product[] = [
   {
     id: 'weft',
-    livePreview: true,
+    preview: '/products/weft-website.webp',
     resources: [
       {
         label: 'Weft docs',

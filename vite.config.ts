@@ -12,6 +12,8 @@ export default defineConfig({
     },
   },
   build: {
+    outDir: process.env.ECNIVS_BUILD_DIRECTORY ?? 'dist',
+    emptyOutDir: !process.env.ECNIVS_BUILD_DIRECTORY,
     rollupOptions: {
       input: {
         main: path.resolve(import.meta.dirname, 'index.html'),

@@ -7,7 +7,6 @@ import {
   InstagramLogo,
 } from '@phosphor-icons/react'
 import { PRODUCTS } from '@/data/products'
-import { Wordmark } from './Wordmark'
 import { SOCIAL } from '@/data/social'
 
 type FooterLink = {
@@ -48,15 +47,10 @@ function FooterLinkItem({ label, href, external }: FooterLink) {
       href={href}
       target={external ? '_blank' : undefined}
       rel={external ? 'noreferrer' : undefined}
-      className="group/link inline-flex w-fit items-center gap-1.5 text-sm text-muted-foreground transition-colors duration-200 select-none hover:text-foreground"
+      className="footer-link"
     >
       {label}
-      {external && (
-        <ArrowUpRight
-          size={13}
-          className="shrink-0 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5"
-        />
-      )}
+      {external && <ArrowUpRight size={13} aria-hidden="true" />}
     </a>
   )
 }
@@ -69,9 +63,9 @@ function FooterColumn({
   links: FooterLink[]
 }) {
   return (
-    <div>
-      <h2 className="text-sm font-medium text-foreground">{title}</h2>
-      <div className="mt-5 flex flex-col gap-3">
+    <div className="footer-column">
+      <h2>{title}</h2>
+      <div>
         {links.map((link) => (
           <FooterLinkItem key={link.label} {...link} />
         ))}
@@ -82,100 +76,59 @@ function FooterColumn({
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-border/60 pt-20">
-      <div className="grain-overlay pointer-events-none" />
-
-      <div className="relative z-10 mx-auto max-w-7xl px-6">
-        <div className="grid grid-cols-2 gap-x-8 gap-y-12 pb-8 sm:grid-cols-4 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1fr]">
-          <div className="col-span-2 sm:col-span-4 lg:col-span-1">
-            <a href="/" aria-label="ecnivs home">
-              <Wordmark />
-            </a>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              For the terminally curious
-            </p>
-            <a
-              href="mailto:hello@ecnivs.com"
-              className="mt-4 block w-fit text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              hello@ecnivs.com
-            </a>
+    <footer className="site-footer">
+      <div className="footer-content mx-auto max-w-7xl px-6">
+        <a className="footer-name" href="/" aria-label="ecnivs home">
+          ecnivs
+        </a>
+        <div className="footer-links">
+          <div className="footer-contact">
+            <p>For the terminally curious.</p>
+            <a href="mailto:hello@ecnivs.com">hello@ecnivs.com</a>
           </div>
-
           <FooterColumn title="Explore" links={BRAND_LINKS} />
           <FooterColumn title="Labs" links={PRODUCT_LINKS} />
           <FooterColumn title="Resources" links={RESOURCE_LINKS} />
           <FooterColumn title="Legal" links={LEGAL_LINKS} />
         </div>
-
-        <div
-          aria-hidden="true"
-          className="pointer-events-none h-[clamp(64.8px,17.67vw,162px)] overflow-hidden leading-[0.8] select-none"
-        >
-          <span
-            className="block translate-y-[22%] font-semibold whitespace-nowrap text-[clamp(88px,24vw,220px)] tracking-[-0.04em]"
-            style={{
-              color: 'hsl(var(--surface))',
-              textShadow:
-                '0 1.5px 0 rgba(255,255,255,0.7), 0 -1px 1px rgba(24,28,38,0.12)',
-            }}
-          >
-            ecnivs
-          </span>
-        </div>
-      </div>
-
-      <div className="relative z-10 border-t border-border/50">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 pt-7 pb-10 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex items-center gap-5">
-            <p className="font-mono-brand text-xs text-subtle-foreground">
-              &copy; {new Date().getFullYear()} ecnivs.
-            </p>
-            <div className="flex items-center">
-              <a
-                href={SOCIAL.github}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="ecnivs on GitHub"
-                className="inline-flex h-11 w-11 items-center justify-center text-muted-foreground transition-colors hover:text-foreground"
-              >
-                <GithubLogo size={18} weight="fill" aria-hidden="true" />
-              </a>
-              <a
-                href={SOCIAL.youtube}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="ecnivs on YouTube"
-                className="inline-flex h-11 w-11 items-center justify-center text-muted-foreground transition-colors hover:text-foreground"
-              >
-                <YoutubeLogo size={20} aria-hidden="true" />
-              </a>
-              <a
-                href={SOCIAL.instagram}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="ecnivs on Instagram"
-                className="inline-flex h-11 w-11 items-center justify-center text-muted-foreground transition-colors hover:text-foreground"
-              >
-                <InstagramLogo size={20} aria-hidden="true" />
-              </a>
-              <a
-                href="https://wa.me/919233429872"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Contact ecnivs on WhatsApp"
-                className="inline-flex h-11 w-11 items-center justify-center text-muted-foreground transition-colors hover:text-foreground"
-              >
-                <WhatsappLogo size={18} weight="fill" aria-hidden="true" />
-              </a>
-            </div>
-          </div>
-          <a
-            href="/#top"
-            aria-label="Back to top"
-            className="flex h-11 w-11 items-center justify-center border-2 border-border text-muted-foreground transition-colors duration-200 hover:border-accent/60 hover:text-accent"
-          >
-            <ArrowUp size={14} />
+        <div className="footer-bottom">
+          <p>&copy; {new Date().getFullYear()} ecnivs</p>
+          <nav className="footer-socials" aria-label="Follow ecnivs">
+            <a
+              href={SOCIAL.github}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="ecnivs on GitHub"
+            >
+              <GithubLogo size={20} aria-hidden="true" />
+            </a>
+            <a
+              href={SOCIAL.youtube}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="ecnivs on YouTube"
+            >
+              <YoutubeLogo size={20} aria-hidden="true" />
+            </a>
+            <a
+              href={SOCIAL.instagram}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="ecnivs on Instagram"
+            >
+              <InstagramLogo size={20} aria-hidden="true" />
+            </a>
+            <a
+              href="https://wa.me/919233429872"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Contact ecnivs on WhatsApp"
+            >
+              <WhatsappLogo size={20} aria-hidden="true" />
+            </a>
+          </nav>
+          <a href="/#top" className="footer-top-link">
+            Back to top <ArrowUp size={18} aria-hidden="true" />
           </a>
         </div>
       </div>

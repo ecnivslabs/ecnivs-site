@@ -6,12 +6,26 @@ export function About() {
     <section id="about" className="about-section">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 md:grid-cols-2 md:gap-20">
         <Reveal>
-          <p className="section-label">This is ecnivs</p>
           <h2>
-            One brand
+            Follow the
             <br />
-            Many rabbit holes
+            curiosity
           </h2>
+          <figure className="about-maker">
+            <img
+              src="/about/portrait.webp"
+              width="1254"
+              height="1254"
+              alt="Vince Hika Swu"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>
+              Vince Hika Swu
+              <br />
+              <span>Creator of ecnivs</span>
+            </figcaption>
+          </figure>
         </Reveal>
         <Reveal delay={0.1} className="space-y-6">
           <p>

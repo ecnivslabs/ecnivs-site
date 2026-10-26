@@ -65,6 +65,11 @@ jobs:
           VITE_INQUIRY_ENDPOINT: ${{ vars.VITE_INQUIRY_ENDPOINT }}
         run: npm run build
 
+      - name: Verify browser interactions before publication
+        run: |
+          npm exec playwright install --with-deps chromium
+          npm run test:browser
+
       - name: Check SEO and internal links
         run: npm run check:seo
 
