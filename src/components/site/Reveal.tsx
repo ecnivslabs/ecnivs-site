@@ -8,12 +8,14 @@ function revealObserver() {
         if (!entry.isIntersecting) continue
         observer?.unobserve(entry.target)
         if (matchMedia('(prefers-reduced-motion: reduce)').matches) continue
-        const target = entry.target as HTMLElement
-        target.style.setProperty(
-          '--reveal-delay',
-          `${Number(target.dataset.revealDelay)}ms`,
+        entry.target.animate(
+          [{ transform: 'translateY(12px)' }, { transform: 'translateY(0)' }],
+          {
+            duration: 600,
+            delay: Number((entry.target as HTMLElement).dataset.revealDelay),
+            easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+          },
         )
-        target.classList.add('reveal-enter')
       }
     },
     { threshold: 0.05 },
@@ -35,18 +37,10 @@ export function Reveal({
     const target = element.current
     if (!target || !('IntersectionObserver' in window)) return
     const current = revealObserver()
-    const finished = (event: AnimationEvent) => {
-      if (event.target === target) target.classList.remove('reveal-enter')
-    }
-    target.addEventListener('animationend', finished)
-    target.addEventListener('animationcancel', finished)
     current.observe(target)
     return () => {
       current.unobserve(target)
-      target.removeEventListener('animationend', finished)
-      target.removeEventListener('animationcancel', finished)
-      target.classList.remove('reveal-enter')
-      target.style.removeProperty('--reveal-delay')
+      for (const animation of target.getAnimations()) animation.cancel()
     }
   }, [])
   return (
