@@ -18,15 +18,6 @@ export default defineConfig({
       input: {
         main: path.resolve(import.meta.dirname, 'index.html'),
         about: path.resolve(import.meta.dirname, 'about/index.html'),
-        sites: path.resolve(import.meta.dirname, 'sites/index.html'),
-        websitesRedirect: path.resolve(
-          import.meta.dirname,
-          'websites/index.html',
-        ),
-        websiteRedirect: path.resolve(
-          import.meta.dirname,
-          'website/index.html',
-        ),
         companyRedirect: path.resolve(
           import.meta.dirname,
           'company/index.html',

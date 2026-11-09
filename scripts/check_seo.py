@@ -74,8 +74,7 @@ def check_site(output):
     urls = [node.text for node in sitemap.findall('.//{*}loc')]
     check(len(urls) == len(set(urls)), 'Sitemap contains duplicate URLs')
     check(origin in urls, 'Sitemap must include the homepage')
-    check(f'{origin}sites/' in urls, 'Sitemap must include website services at /sites/')
-    redirects = {'/websites/': '/sites/', '/website/': '/sites/'}
+    redirects = {'/company/': '/about/'}
     for route, target in redirects.items():
         url = urljoin(origin, route)
         check(url not in urls, f'Redirect must not appear in sitemap: {url}')

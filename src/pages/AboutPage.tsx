@@ -99,8 +99,7 @@ export function AboutPage() {
 
       <PageSection title="Say hello">
         <p>
-          I also take on freelance projects and contracts, including{' '}
-          <a href="/sites/">websites and online stores</a>. For a project, video
+          I also take on freelance projects and contracts. For a project, video
           idea or collaboration, write to{' '}
           <a href="mailto:hello@ecnivs.com">hello@ecnivs.com</a>.
         </p>

@@ -46,7 +46,6 @@ for (const file of [
   'support/index.html',
   'privacy/index.html',
   'terms/index.html',
-  'sites/index.html',
 ]) {
   const html = await readFile(join(root, file), 'utf8')
   const pending = [...html.matchAll(/<script[^>]*src="([^"]+)"/g)].map(

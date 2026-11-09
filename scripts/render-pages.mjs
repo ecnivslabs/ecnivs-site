@@ -6,7 +6,6 @@ import { CancellationRefundPolicy } from '../src/pages/CancellationRefundPolicy.
 import { SupportPage } from '../src/pages/SupportPage.tsx'
 import App from '../src/App.tsx'
 import { AboutPage } from '../src/pages/AboutPage.tsx'
-import { WebsitesPage } from '../src/pages/WebsitesPage.tsx'
 
 export function renderPages() {
   return Object.fromEntries(
@@ -17,7 +16,6 @@ export function renderPages() {
       ['terms/index.html', TermsOfService],
       ['cancellation-refund/index.html', CancellationRefundPolicy],
       ['support/index.html', SupportPage],
-      ['sites/index.html', WebsitesPage],
     ].map(([file, Component]) => [
       file,
       renderToString(createElement(StrictMode, null, createElement(Component))),

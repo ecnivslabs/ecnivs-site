@@ -10,18 +10,11 @@ export function Nav() {
         <a href="/" aria-label="ecnivs home">
           <Wordmark />
         </a>
-        <nav className="site-header-links" aria-label="Main navigation">
-          <a href="/sites/" className="site-websites-link">
-            Sites
+        <Button asChild>
+          <a href={SOCIAL.youtube} target="_blank" rel="noreferrer">
+            <YoutubeLogo size={18} aria-hidden="true" /> YouTube
           </a>
-          <Button asChild>
-            <a href={SOCIAL.youtube} target="_blank" rel="noreferrer">
-              <YoutubeLogo size={18} aria-hidden="true" />
-              <span className="site-youtube-label">YouTube</span>
-              <span className="site-youtube-accessible">ecnivs on YouTube</span>
-            </a>
-          </Button>
-        </nav>
+        </Button>
       </div>
     </header>
   )

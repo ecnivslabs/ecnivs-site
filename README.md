@@ -10,7 +10,7 @@ The build prerenders `/support/`, `/privacy/`, `/terms/` and `/cancellation-refu
 
 The contact form reports success only after its configured endpoint accepts the request. Honeypot and duplicate-submission checks do not claim delivery. Request failures preserve entered fields; restricted browser storage cannot block delivery or turn an accepted request into a failure. An unconfigured form provides a direct email alternative. The implementation's optional duplicate timestamp is not a server-side abuse-control guarantee.
 
-Run `npm exec playwright install chromium`, then `npm run test:browser` for browser verification. The check builds configured and unconfigured variants in temporary directories, uses a loopback receiver and synthetic messages, and never sends real email. It covers all seven public routes at 1440, 768, 390 and 320 pixels, video links, contact validation, failed delivery, retry, accepted-response focus and contact links without JavaScript. `ECNIVS_BROWSER_EVIDENCE` selects the screenshot and build-log directory. `ECNIVS_BUILD_DIRECTORY` selects an isolated output directory across Vite, prerendering and compression. The verification and publication workflows run these checks.
+Run `npm exec playwright install chromium`, then `npm run test:browser` for browser verification. The check builds configured and unconfigured variants in temporary directories, uses a loopback receiver and synthetic messages, and never sends real email. It covers all six public routes at 1440, 768, 390 and 320 pixels, video links, contact validation, failed delivery, retry, accepted-response focus and contact links without JavaScript. `ECNIVS_BROWSER_EVIDENCE` selects the screenshot and build-log directory. `ECNIVS_BUILD_DIRECTORY` selects an isolated output directory across Vite, prerendering and compression. The verification and publication workflows run these checks.
 
 ## Shared product information
 
@@ -33,8 +33,6 @@ The existing project design takes precedence over generic skill palettes or deco
 GitHub Pages deploys `master` using `.github/workflows/deploy.yml`. The existing workflow checks source and video metadata, builds and publishes the static artifact. Publishing changed source through that workflow requires an explicitly authorized commit and push. Do not commit or push automatically.
 
 Product websites should link to the canonical shared support and legal pages. Preserve already-published redirects and incoming fragments when reorganizing content. This avoids duplicated policies and broken saved links.
-
-Website services use `/sites/` as the canonical route. `/websites/` and `/website/` redirect there using static pages, matching the existing `/company/` redirect on GitHub Pages. JavaScript preserves query strings and fragments; without JavaScript, a meta refresh and visible link lead to `/sites/`.
 
 ## Shared-page ownership
 

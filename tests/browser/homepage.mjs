@@ -37,7 +37,6 @@ try {
   for (const route of [
     '/',
     '/about/',
-    '/sites/',
     '/support/',
     '/privacy/',
     '/terms/',
@@ -119,6 +118,12 @@ try {
   )
   const still = await browser.newContext({ javaScriptEnabled: false })
   const staticPage = await still.newPage()
+  await staticPage.route('https://weft.ecnivs.com/**', (route) =>
+    route.fulfill({
+      contentType: 'text/html',
+      body: '<title>Synthetic product preview</title>',
+    }),
+  )
   await staticPage.goto(unconfigured.origin)
   assert.match(await staticPage.locator('h1').textContent(), /curious/)
   assert(await staticPage.locator('#contact form').isHidden())
@@ -132,7 +137,7 @@ try {
   assert.deepEqual(errors, [])
   await context.close()
   console.log(
-    'Restored website: seven routes, four widths, video links, product preview and synthetic contact outcomes pass.',
+    'Restored website: six routes, four widths, video links, product preview and synthetic contact outcomes pass.',
   )
 } finally {
   await browser?.close()

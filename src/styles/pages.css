@@ -170,25 +170,25 @@
   font-family: var(--font-label);
   font-size: 12px;
 }
-:is(.page-about, .page-websites) .page-section {
+.page-about .page-section {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 72px;
   padding-block: 48px;
   border-bottom: 1px solid hsl(var(--border) / 0.6);
 }
-:is(.page-about, .page-websites) .page-section:last-child {
+.page-about .page-section:last-child {
   border-bottom: 0;
   padding-bottom: 0;
 }
-:is(.page-about, .page-websites) .page-section + .page-section {
+.page-about .page-section + .page-section {
   margin-top: 0;
 }
-:is(.page-about, .page-websites) .page-section h2 {
+.page-about .page-section h2 {
   font-size: clamp(1.6rem, 2.6vw, 2rem);
   font-weight: 800;
 }
-:is(.page-about, .page-websites) .page-section-body {
+.page-about .page-section-body {
   margin-top: 0;
   max-width: 64ch;
   font-size: 16px;
@@ -214,7 +214,7 @@
 }
 @media (max-width: 1023px) {
   .page-about .page-heading,
-  :is(.page-about, .page-websites) .page-section {
+  .page-about .page-section {
     gap: 40px;
   }
   .page-document .page-content {
@@ -256,7 +256,7 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0 20px;
   }
-  :is(.page-about, .page-websites) .page-section {
+  .page-about .page-section {
     grid-template-columns: 1fr;
     gap: 20px;
     padding-block: 36px;
