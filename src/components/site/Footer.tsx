@@ -128,7 +128,7 @@ export function Footer() {
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 pt-7 pb-10 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-5">
             <p className="font-mono-brand text-xs text-subtle-foreground">
-              &copy; {new Date().getFullYear()} ecnivs.
+              &copy; 2024 ecnivs.
             </p>
             <div className="flex items-center">
               <a
