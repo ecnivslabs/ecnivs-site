@@ -58,6 +58,7 @@ jobs:
       - name: Check releases and source
         run: |
           npm run test:videos
+          npm run test:legal
           npm run lint
 
       - name: Build

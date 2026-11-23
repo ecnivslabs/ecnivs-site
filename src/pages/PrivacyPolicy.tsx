@@ -4,7 +4,7 @@ export function PrivacyPolicy() {
   return (
     <PageLayout
       title="Privacy policy"
-      subtitle="Updated 22 October 2026"
+      subtitle="Updated 23 November 2026"
       intro={
         <p>
           How ecnivs handles information across our websites, products and
@@ -114,9 +114,19 @@ export function PrivacyPolicy() {
         </p>
         <p>
           Transactional email uses your account address for verification,
-          recovery and service notifications. Resend processes the recipient,
-          message content and delivery information. We use delivery and failure
-          events to monitor these messages. Account emails are not advertising.
+          recovery and service notifications, including subscription
+          confirmations, trial-ending reminders and payment problem notices.
+          Resend processes the recipient, message content and delivery
+          information. We use delivery and failure events to monitor these
+          messages. Account emails are not advertising.
+        </p>
+        <p>
+          Signed-in software checks your account’s access with our servers when
+          it starts and while it runs. The check uses your account session, the
+          app version and an installation identifier, and where the app
+          supports it an application proof. It is necessary to provide the
+          service, so it is separate from optional diagnostics and continues
+          when diagnostics are off.
         </p>
         <p>
           Feedback submitted through an app can include the message, category,
@@ -131,6 +141,48 @@ export function PrivacyPolicy() {
           your device to another provider follow that provider’s policies.
           Signing in to our account service does not require your model provider
           API keys.
+        </p>
+      </PageSection>
+      <PageSection title="Payments and subscriptions">
+        <p>
+          Where a service sells subscriptions, a payment provider collects the
+          payment details on its own page and processes them. We do not receive
+          or store full card numbers, CVVs or UPI credentials. We keep the
+          subscription state, plan, billing periods, invoice and payment
+          references, amounts, currency, refund and dispute status, and whether
+          the provider reports the card as issued outside India, so we can give
+          access, send billing notices, handle refunds and answer disputes. We
+          keep these records for as long as accounting, tax and dispute
+          obligations require.
+        </p>
+        <p>
+          We choose the price list from the approximate country of your network
+          address. The lookup uses a country database packaged on our own
+          servers, so your address is not sent to another company for this
+          purpose. The database is published by{' '}
+          <a href="https://db-ip.com">DB-IP</a> under a Creative Commons
+          Attribution licence. The result chooses the offer and does not create
+          a profile.
+        </p>
+      </PageSection>
+      <PageSection title="Trial abuse prevention">
+        <p>
+          To offer one free trial per person, we keep keyed one-way hashes, not
+          readable values, of your canonical email mailbox, your installation
+          identifier and, where supported, an application proof, with the time
+          of the claim and a review flag. We also keep a keyed hash of the
+          network allocation your request came from. Our legitimate interest is
+          preventing fraud and repeated trial abuse. We use these records for no
+          other purpose.
+        </p>
+        <p>
+          Claim records are kept for 365 days and network hashes for 30 days.
+          They are kept after account deletion without a link to the deleted
+          account, because their purpose is to recognise a repeat claim. If the
+          checks match an earlier claim, the trial can be refused
+          automatically. You can ask for a person to review the decision at{' '}
+          <a href="mailto:support@ecnivs.com">support@ecnivs.com</a>. Account
+          exports list your claim type, time and flag, never the hashes.
         </p>
       </PageSection>
       <PageSection title="Security and operational logs">
@@ -199,9 +251,11 @@ export function PrivacyPolicy() {
         </p>
         <p>
           We do not sell personal information, share it for third-party
-          marketing or use account information for advertising profiles. We do
-          not make automated decisions that produce legal or similarly
-          significant effects about you.
+          marketing or use account information for advertising profiles. Apart
+          from the automatic refusal of a repeat free trial described under
+          trial abuse prevention, which a person reviews on request, we do not
+          make automated decisions that produce legal or similarly significant
+          effects about you.
         </p>
       </PageSection>
       <PageSection title="Service providers and transfers">
@@ -210,9 +264,9 @@ export function PrivacyPolicy() {
           delivery and security. Our current hosted account infrastructure runs
           on Hostinger in India, including the account database, local backups
           and restricted security archive. Resend delivers transactional email.
-          Email providers process messages you send to our inboxes. A contact
-          form, when configured, uses the delivery service identified by that
-          form.
+          Razorpay processes payments and subscriptions for services that
+          charge. Email providers process messages you send to our inboxes. The
+          contact form on ecnivs.com sends your message through Formspree.
         </p>
         <p>
           These providers may process information in countries outside your own.
@@ -235,7 +289,12 @@ export function PrivacyPolicy() {
             Hostinger privacy
           </a>{' '}
           and{' '}
-          <a href="https://resend.com/legal/privacy-policy">Resend privacy</a>.
+          <a href="https://resend.com/legal/privacy-policy">Resend privacy</a>,{' '}
+          <a href="https://razorpay.com/privacy/">Razorpay privacy</a> and{' '}
+          <a href="https://formspree.io/legal/privacy-policy/">
+            Formspree privacy
+          </a>
+          .
           Links to other sites, embedded previews and services you open are
           subject to their operators’ policies.
         </p>
@@ -256,11 +315,11 @@ export function PrivacyPolicy() {
           use advertising cookies on these sites.
         </p>
         <p>
-          ecnivs.com and our hosted account pages do not load analytics or
-          advertising scripts. Any additional product-specific measurement is
-          disclosed where it is used. We will update the relevant notice and
-          provide any legally required choice before introducing nonessential
-          tracking.
+          We do not currently load analytics or advertising scripts on
+          ecnivs.com or our hosted account pages. Any product-specific
+          measurement is disclosed where it is used. Before we introduce
+          nonessential tracking we will update this policy and provide any
+          legally required choice.
         </p>
       </PageSection>
       <PageSection title="Optional app diagnostics">
@@ -306,7 +365,7 @@ export function PrivacyPolicy() {
           controls.
         </p>
         <p>
-          Pixie also offers optional daily usage history in account Settings.
+          An app can also offer optional daily usage history in account settings.
           This separate choice is off until you enable it. It saves daily turn,
           model-call, tool-execution and input/output token totals from new
           optional app reports while your account exists, until you turn history
@@ -327,6 +386,7 @@ export function PrivacyPolicy() {
             'Queued account email bodies are cleared after acceptance by the mail service. Queue metadata and associated delivery records are removed after 30 days.',
             'Administrative change history in our current hosted account service is retained for 180 days for access reviews and security investigations. Authentication replay checks expire after two minutes.',
             'Security and operational metadata in our restricted archive is retained for 180 days from collection, then removed by routine maintenance. This archive is separate from optional diagnostics and is not included in routine account-database backups.',
+            'Trial claim hashes are kept for 365 days and network hashes for 30 days, including after account deletion, as explained under trial abuse prevention. Billing and payment records are kept as long as accounting, tax and dispute obligations require.',
             'Routine backups of our current hosted account database are retained for around two weeks under daily rotation. Deleted records can remain in protected backups until that rotation removes them.',
             'Support messages are kept while needed to resolve the request and manage relevant follow-up, security or legal obligations. Optional update or waitlist details are kept while that purpose continues, or until you ask to leave.',
           ]}

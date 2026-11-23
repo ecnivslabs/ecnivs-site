@@ -46,7 +46,8 @@ export function SupportPage() {
       </PageSection>
       <PageSection title="Billing and cancellation">
         <p>
-          To cancel a subscription or request a refund, email{' '}
+          Subscriptions can be cancelled in the product’s account controls.
+          To request a refund, or if you cannot cancel there, email{' '}
           <a href="mailto:support@ecnivs.com">support@ecnivs.com</a> with the
           service and account or order concerned. Our{' '}
           <a href="/cancellation-refund/">cancellation and refund policy</a>{' '}

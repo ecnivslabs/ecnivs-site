@@ -11,6 +11,7 @@
     "preview": "vite preview",
     "refresh:videos": "python3 scripts/refresh_youtube.py",
     "test:videos": "python3 -m unittest discover -s scripts -p \"test_*.py\" && node tests/videos.test.ts",
+    "test:legal": "node tests/legal.test.ts",
     "test:browser": "node tests/browser/homepage.mjs",
     "check:seo": "python3 scripts/check_seo.py"
   },

@@ -4,7 +4,7 @@ export function CancellationRefundPolicy() {
   return (
     <PageLayout
       title="Cancellation and refunds"
-      subtitle="Updated 25 October 2026"
+      subtitle="Updated 23 November 2026"
       intro={
         <p>
           How to cancel an ecnivs purchase or subscription, and when a refund
@@ -33,7 +33,8 @@ export function CancellationRefundPolicy() {
       <PageSection title="Cancel a subscription">
         <p>
           Cancel at any time using the service’s cancellation controls, where
-          available, or email{' '}
+          available; in-service cancellation takes effect immediately. You can
+          also email{' '}
           <a href="mailto:support@ecnivs.com?subject=Cancellation%20request">
             support@ecnivs.com
           </a>
@@ -149,12 +150,17 @@ export function CancellationRefundPolicy() {
           India.
         </p>
       </PageSection>
-      <PageSection title="Free access and other sellers">
+      <PageSection title="Free access, trials and other sellers">
         <p>
-          Free accounts, trials and previews do not authorise a paid
-          subscription. Any paid conversion requires your explicit agreement to
-          its price and billing terms. A clearly labelled payment simulation
-          does not collect real money or create a cash refund.
+          Free accounts and previews do not authorise a paid subscription. A
+          free trial that needs a payment method becomes a paid subscription
+          only under the price and date you accepted before it started. If you
+          cancel before the trial ends, the subscription price is not charged.
+          Any small verification amount is handled as the offer states. The
+          first charge after a trial follows the rules above, including the
+          refund for a charge made after a valid, timely cancellation. A clearly
+          labelled payment simulation does not collect real money or create a
+          cash refund.
         </p>
         <p>
           This policy governs amounts paid to ecnivs. Purchases billed by an

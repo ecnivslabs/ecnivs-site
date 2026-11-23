@@ -4,7 +4,7 @@ export function TermsOfService() {
   return (
     <PageLayout
       title="Terms of service"
-      subtitle="Updated 25 October 2026"
+      subtitle="Updated 23 November 2026"
       intro={<p>Terms for ecnivs websites, products and services.</p>}
     >
       <PageSection title="About these terms">
@@ -62,7 +62,7 @@ export function TermsOfService() {
           items={[
             'Use services only with lawful authority over the accounts, systems, data and material involved. Obtain any permission needed before accessing or testing someone else’s systems.',
             'Do not use our services to steal credentials or data, distribute malicious software, send spam, harass people or infringe privacy or intellectual property rights. Authorised security testing must stay within its agreed scope.',
-            'Do not bypass access controls or service limits, impersonate another person, share accounts to evade restrictions or deliberately disrupt our infrastructure.',
+            'Do not bypass access controls or service limits, impersonate another person, share accounts or credentials to exceed the limits of your plan, misrepresent your location to obtain another region’s price, claim more than one free trial or deliberately disrupt our infrastructure.',
             'Follow the terms and usage restrictions of any external provider you connect. Access to our service does not grant access to another provider’s paid or restricted resources.',
           ]}
         />
@@ -87,9 +87,9 @@ export function TermsOfService() {
           Creating a free account does not authorize a charge or start a paid
           subscription. A free preview does not automatically become a paid
           subscription. Before any purchase, the offer must identify the price,
-          currency, applicable taxes, billing interval, included usage, renewal,
-          cancellation and refund conditions. You must explicitly choose the
-          paid offer before we charge you.
+          currency, applicable taxes, billing interval, included usage and
+          limits, renewal, cancellation and refund conditions. You must
+          explicitly choose the paid offer before we charge you.
         </p>
         <p>
           Our <a href="/cancellation-refund/">cancellation and refund policy</a>{' '}
@@ -113,16 +113,15 @@ export function TermsOfService() {
       </PageSection>
       <PageSection title="Website services">
         <p>
-          Full websites and online stores include their backend, admin panel,
-          analytics dashboard, hosting and technical maintenance. Choose $20 USD
-          billed monthly or $180 USD billed yearly, equivalent to $15 per month.
-          Both billing options include the same agreed features, with no setup
-          fee and no ecnivs commission on sales. Monthly subscriptions have no
-          minimum term; yearly subscriptions are paid for a full year in
-          advance. Before subscribing, we agree the project scope, supported
+          Where we offer website and online store projects, they include the
+          backend, admin panel, analytics dashboard, hosting and technical
+          maintenance that the written offer lists. Before subscribing, we agree
+          the price, currency, billing interval, project scope, supported
           features, billing start date, renewal date, applicable taxes and any
-          additional refund rights in writing. The shared cancellation and
-          refund policy applies. An enquiry does not start billing.
+          additional refund rights in writing. Monthly subscriptions have no
+          minimum term; yearly subscriptions are paid for the full year in
+          advance. The shared cancellation and refund policy applies. An
+          enquiry does not start billing.
         </p>
         <p>
           The initial build includes up to five informational pages and two
@@ -165,6 +164,55 @@ export function TermsOfService() {
           retention, relevant providers and any required data-processing
           agreement are documented for the project before personal information
           is collected.
+        </p>
+      </PageSection>
+      <PageSection title="Subscriptions, free trials and pricing">
+        <p>
+          A paid subscription renews automatically at the end of each billing
+          period until you cancel. The offer shows the price, currency and
+          interval before you pay, and by subscribing you authorise recurring
+          charges to the payment method you provide through our payment
+          provider. We give notice before a price change takes effect for an
+          existing subscription, and you can cancel before it applies.
+        </p>
+        <p>
+          A free trial requires a payment method, such as a card or a recurring
+          payment mandate. The offer states the trial length, the price charged
+          when the trial ends and that the subscription starts automatically
+          unless you cancel before then. If you cancel before the trial ends, we
+          do not charge the subscription price. A small verification amount may
+          be authorised or charged to confirm that the payment method works;
+          where that applies the offer states the amount and whether it is
+          returned. Where the offer or the law requires it, we remind you before
+          a trial converts.
+        </p>
+        <p>
+          We offer one free trial per person. We may decline a trial, or end
+          access gained through one, where our checks show that you or someone
+          on your behalf already used a trial, including with another email
+          address, installation, device or payment method. The{' '}
+          <a href="/privacy/#trial-abuse-prevention">privacy policy</a>{' '}
+          describes these checks. If you think a refusal is mistaken, contact{' '}
+          <a href="mailto:support@ecnivs.com">support@ecnivs.com</a> and a
+          person will review it.
+        </p>
+        <p>
+          Prices and currencies can differ by region. We choose the price list
+          from the approximate location of your network address, and the offer
+          may need a payment method issued in a particular country or one that
+          supports recurring payments across borders. We may check where a
+          payment method was issued. If a payment method cannot be used for an
+          offer, you are not charged for it and can choose another method or
+          offer.
+        </p>
+        <p>
+          If a renewal payment fails, your provider or we may retry it and we
+          tell you. Access follows the period that was actually paid, and a
+          subscription with repeated failed payments can pause or end. Plans can
+          limit the number of devices or concurrent sessions, which the offer
+          states before you pay. Signed-in software checks your access with our
+          servers when it starts and while it runs; these checks are not
+          optional diagnostics and continue when diagnostics are off.
         </p>
       </PageSection>
       <PageSection title="Software and your work">

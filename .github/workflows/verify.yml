@@ -26,6 +26,7 @@ jobs:
       - run: npm exec playwright install --with-deps chromium
       - run: npm run lint
       - run: npm run test:videos
+      - run: npm run test:legal
       - run: npm run test:browser
       - run: npm run build
       - run: npm run check:seo
