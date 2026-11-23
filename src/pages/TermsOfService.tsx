@@ -187,10 +187,10 @@ export function TermsOfService() {
           a trial converts.
         </p>
         <p>
-          We offer one free trial per person. We may decline a trial, or end
-          access gained through one, where our checks show that you or someone
-          on your behalf already used a trial, including with another email
-          address, installation, device or payment method. The{' '}
+          We offer one free trial per person. We may decline a trial where
+          our checks show that you or someone on your behalf already used a
+          trial, including with another email
+          address or payment method. The{' '}
           <a href="/privacy/#trial-abuse-prevention">privacy policy</a>{' '}
           describes these checks. If you think a refusal is mistaken, contact{' '}
           <a href="mailto:support@ecnivs.com">support@ecnivs.com</a> and a

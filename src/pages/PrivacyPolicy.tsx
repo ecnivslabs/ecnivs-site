@@ -123,10 +123,9 @@ export function PrivacyPolicy() {
         <p>
           Signed-in software checks your account’s access with our servers when
           it starts and while it runs. The check uses your account session, the
-          app version and an installation identifier, and where the app
-          supports it an application proof. It is necessary to provide the
-          service, so it is separate from optional diagnostics and continues
-          when diagnostics are off.
+          app version and an installation identifier. It is necessary to
+          provide the service, so it is separate from optional diagnostics and
+          continues when diagnostics are off.
         </p>
         <p>
           Feedback submitted through an app can include the message, category,
@@ -168,19 +167,24 @@ export function PrivacyPolicy() {
       <PageSection title="Trial abuse prevention">
         <p>
           To offer one free trial per person, we keep keyed one-way hashes, not
-          readable values, of your canonical email mailbox, your installation
-          identifier and, where supported, an application proof, with the time
-          of the claim and a review flag. We also keep a keyed hash of the
-          network allocation your request came from. Our legitimate interest is
+          readable values, of your canonical email mailbox and of the payment
+          method you use for the trial (a UPI ID, or a card’s network, issuer,
+          type and last four digits), with the time of the claim and a review
+          flag. We also keep a keyed hash of the network allocation your
+          request came from. We collect nothing from your device for these
+          checks. Our legitimate interest is
           preventing fraud and repeated trial abuse. We use these records for no
           other purpose.
         </p>
         <p>
-          Claim records are kept for 365 days and network hashes for 30 days.
-          They are kept after account deletion without a link to the deleted
-          account, because their purpose is to recognise a repeat claim. If the
-          checks match an earlier claim, the trial can be refused
-          automatically. You can ask for a person to review the decision at{' '}
+          Mailbox and payment method records are kept for 365 days and network
+          hashes for 30 days. They are kept after account deletion without a
+          link to the deleted account, because their purpose is to recognise a
+          repeat claim. If your mailbox matches an earlier claim, the trial is
+          not offered automatically. A payment method that matches an earlier
+          trial is flagged for a person to review and does not refuse the
+          trial by itself. A trial that has started is not ended by these
+          checks. You can ask for a person to review the decision at{' '}
           <a href="mailto:support@ecnivs.com">support@ecnivs.com</a>. Account
           exports list your claim type, time and flag, never the hashes.
         </p>
@@ -199,6 +203,15 @@ export function PrivacyPolicy() {
           security records are separate from optional app diagnostics. Turning
           off optional diagnostics does not turn off this operational
           recordkeeping.
+        </p>
+        <p>
+          To slow password guessing, our account service keeps a count of
+          wrong passwords for each email address entered and for each network it
+          came from, stored as keyed one-way hashes, not readable values. The
+          counts are deleted after a day without a failure, or when the
+          password changes. If the right password follows several wrong ones,
+          we email the account holder. Our legitimate interest is protecting
+          accounts.
         </p>
         <p>
           Our restricted security archive is stored in India. It keeps selected
