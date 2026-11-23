@@ -16,7 +16,7 @@ Run `npm exec playwright install chromium`, then `npm run test:browser` for brow
 
 The central privacy policy describes our actual account, session, transactional email, feedback and retention practices. Terms cover our websites and services, free and paid access, external providers and accompanying software licenses. Product instructions and release status belong to the individual product rather than these shared pages. The shared pages state subscription, free trial, regional pricing, device limit and trial abuse prevention rules in product-agnostic terms; prices, plan names and limits belong to the offer shown at checkout. `npm run test:legal` fails if these pages name a price or a product, use an em dash, claim that trials never convert, or drop a required disclosure (trial claim hashes and retention, payment provider, contact form processor, location lookup credit).
 
-Source evidence was inspected in the separate private `pixie-site/server` implementation and tested account flows. No private server source or credentials are copied into this public repository.
+Source evidence was inspected in the separate private product service implementation and tested account flows. No private server source or credentials are copied into this public repository.
 
 Research used for the changes:
 

@@ -91,7 +91,7 @@ export function PrivacyPolicy() {
       </PageSection>
       <PageSection title="Accounts and product use">
         <p>
-          <span id="pixie-accounts" aria-hidden="true" />
+          <span id="accounts" aria-hidden="true" />
           Where a service offers an account, registration collects your name,
           email address and password. Our hosted account service stores a
           password hash rather than a readable password, along with verification

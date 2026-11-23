@@ -4,7 +4,7 @@ Research and baseline inspected on 22 October 2026.
 
 ## Constraints and evidence
 
-The company site is a Vite static build published by GitHub Pages, not a Node application running on the shared VPS. The VPS currently serves Pixie's public files through Caddy alongside bounded API, worker and database containers. A single idle resource sample showed 6,277 MiB available from 7,935 MiB RAM; this is an observation, not a capacity guarantee or a benchmark. No unrelated service limits or shared Caddy configuration are changed.
+The company site is a Vite static build published by GitHub Pages, not a Node application running on the shared VPS. The VPS currently serves a product's public files through Caddy alongside bounded API, worker and database containers. A single idle resource sample showed 6,277 MiB available from 7,935 MiB RAM; this is an observation, not a capacity guarantee or a benchmark. No unrelated service limits or shared Caddy configuration are changed.
 
 The working tree already contains a website-services draft, including new pages, navigation and policy text. Those changes are preserved. Performance changes apply to the complete draft, not only the previous production commit.
 

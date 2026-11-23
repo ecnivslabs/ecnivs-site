@@ -44,7 +44,7 @@ export function TermsOfService() {
       </PageSection>
       <PageSection title="Accounts">
         <p>
-          <span id="pixie-accounts-and-beta-access" aria-hidden="true" />
+          <span id="accounts-and-beta-access" aria-hidden="true" />
           Where a service offers accounts, follow its registration, verification
           and recovery instructions. Use an email address you control. If a
           service asks you to approve a device, approve only requests you
